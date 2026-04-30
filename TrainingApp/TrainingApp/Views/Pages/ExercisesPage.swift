@@ -7,31 +7,6 @@
 
 import SwiftUI
 
-/*struct WorkoutRow: View {
-    var imageName: String
-    var workoutName: String
-    var wkDescription: String
-
-    var body: some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 70)
-                .cornerRadius(6)
-            
-            VStack(alignment: .leading, spacing: 5) {
-                Text(workoutName)
-                    .fontWeight(.semibold)
-                
-                Text(wkDescription)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
-        }
-    }
-}*/
-
 struct ExercisesPage: View {
     var drillImage: [FullWorkList] = ImageList.drillImages
     
