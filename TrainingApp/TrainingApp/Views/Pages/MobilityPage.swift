@@ -8,24 +8,17 @@
 import SwiftUI
 
 struct MobilityPage: View {
-    var mobilityImage: [FullWorkList] = ImageList.mobilityImages
-    
-    var ankleWork: [SpecificList] = WorkoutList.ankleWork
-    
-    var hipWork: [SpecificList] = WorkoutList.hipWork
-    
-    var kneeWork: [SpecificList] = WorkoutList.kneeWork
-    
-    var lowerLegWork: [SpecificList] = WorkoutList.lowerLegWork
-    
-    var shoulderWork: [SpecificList] = WorkoutList.shoulderWork
-    
-    var wristWork: [SpecificList] = WorkoutList.wristWork
-    
-    var yogaWork: [SpecificList] = WorkoutList.yogaWork
-    
-    var calisthenicWork: [SpecificList] = WorkoutList.calisthenicWork
-    
+    private let categories: [(category: FullWorkList, workouts: [SpecificList])] = [
+        (ImageList.mobilityImages[0], WorkoutList.ankleWork),
+        (ImageList.mobilityImages[1], WorkoutList.calisthenicWork),
+        (ImageList.mobilityImages[2], WorkoutList.hipWork),
+        (ImageList.mobilityImages[3], WorkoutList.kneeWork),
+        (ImageList.mobilityImages[4], WorkoutList.lowerLegWork),
+        (ImageList.mobilityImages[5], WorkoutList.shoulderWork),
+        (ImageList.mobilityImages[6], WorkoutList.wristWork),
+        (ImageList.mobilityImages[7], WorkoutList.yogaWork)
+    ]
+
     var body: some View {
         ZStack {
             LinearGradient(
@@ -34,74 +27,35 @@ struct MobilityPage: View {
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
-            
+
             VStack {
-                VStack {
-                    Text("Mobility")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.top)
-                }
-                
+                Text("Mobility")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top)
+
                 NavigationStack {
                     List {
-                        ForEach(mobilityImage) { image in
-                            NavigationLink(value: image) {
-                                WorkoutRow(imageName: image.imageName, workoutName: image.title, wkDescription: image.description)
+                        ForEach(categories, id: \.category.id) { entry in
+                            NavigationLink(value: entry.category) {
+                                WorkoutRow(
+                                    imageName: entry.category.imageName,
+                                    workoutName: entry.category.title,
+                                    wkDescription: entry.category.description
+                                )
                             }
                         }
                     }
                     .scrollContentBackground(.hidden)
-                    .navigationDestination(for: FullWorkList.self) { image in
-                        List {
-                            if image.title == "Ankle" {
-                                ForEach(ankleWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Hip" {
-                                ForEach(hipWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Calisthenics" {
-                                ForEach(calisthenicWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Knee" {
-                                ForEach(kneeWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Lower Leg" {
-                                ForEach(lowerLegWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Shoulder" {
-                                ForEach(shoulderWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Wrist" {
-                                ForEach(wristWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Yoga" {
-                                ForEach(yogaWork) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
+                    .navigationDestination(for: FullWorkList.self) { category in
+                        let workouts = categories.first { $0.category.id == category.id }?.workouts ?? []
+                        List(workouts) { workout in
+                            NavigationLink(destination: VideoDetailView(image: workout)) {
+                                WorkoutRow(
+                                    imageName: category.imageName,
+                                    workoutName: workout.workoutName,
+                                    wkDescription: workout.wkDescription
+                                )
                             }
                         }
                         .background(
@@ -112,6 +66,7 @@ struct MobilityPage: View {
                             )
                         )
                         .scrollContentBackground(.hidden)
+                        .navigationTitle(category.title)
                     }
                 }
             }
@@ -119,6 +74,7 @@ struct MobilityPage: View {
         }
     }
 }
+
 #Preview {
     MobilityPage()
 }

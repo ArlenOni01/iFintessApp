@@ -9,28 +9,22 @@ import Foundation
 
 enum SideMenuOptionModel: Int, CaseIterable {
     case Home
-    case Nutrition
-    case Timer
-    case Drills
-    case Games
-    
+    case Train
+    case Mobility
+
     var systemImageName: String {
         switch self {
         case .Home: return "house"
-        case .Nutrition: return "fork.knife"
-        case .Timer: return "timer"
-        case .Drills: return "flag.checkered"
-        case .Games: return "gamecontroller"
+        case .Train: return "flag.checkered"
+        case .Mobility: return "figure.flexibility"
         }
     }
-    
+
     var title: String {
         switch self {
         case .Home: return "Home"
-        case .Nutrition: return "Nutrition"
-        case .Timer: return "Timer"
-        case .Drills: return "Drills"
-        case .Games: return "Games"
+        case .Train: return "Train"
+        case .Mobility: return "Mobility"
         }
     }
 }

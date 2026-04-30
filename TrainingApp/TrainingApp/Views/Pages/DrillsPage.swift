@@ -19,11 +19,11 @@ struct WorkoutRow: View {
                 .scaledToFit()
                 .frame(height: 70)
                 .cornerRadius(6)
-            
+
             VStack(alignment: .leading, spacing: 5) {
                 Text(workoutName)
                     .fontWeight(.semibold)
-                
+
                 Text(wkDescription)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
@@ -33,22 +33,15 @@ struct WorkoutRow: View {
 }
 
 struct DrillsPage: View {
-    var drillImage: [FullWorkList] = ImageList.drillImages
-    
-    var coneDrills: [SpecificList] = DrillList.coneDrillWork
-    
-    var coreStrength: [SpecificList] = DrillList.coreStrengthWork
-    
-    var explosiveness: [SpecificList] = DrillList.explosivenessWork
-    
-    var ladder: [SpecificList] = DrillList.ladderWork
-    
-    var lowerBody: [SpecificList] = DrillList.lowerBodyWork
-    
-    var upperBody: [SpecificList] = DrillList.upperBodyWork
-    
-    @State var isSelected: Bool = false
-    
+    private let categories: [(category: FullWorkList, workouts: [SpecificList])] = [
+        (ImageList.drillImages[0], DrillList.coneDrillWork),
+        (ImageList.drillImages[1], DrillList.coreStrengthWork),
+        (ImageList.drillImages[2], DrillList.explosivenessWork),
+        (ImageList.drillImages[3], DrillList.ladderWork),
+        (ImageList.drillImages[4], DrillList.lowerBodyWork),
+        (ImageList.drillImages[5], DrillList.upperBodyWork)
+    ]
+
     var body: some View {
         ZStack {
             LinearGradient(
@@ -57,63 +50,59 @@ struct DrillsPage: View {
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
-            
+
             VStack {
-                VStack(alignment: .leading) {
-                    Text("Drill Workouts")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.top)
-                }
-                
+                Text("Train")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top)
+
                 NavigationStack {
                     List {
-                        ForEach(drillImage) { image in
-                            NavigationLink(value: image) {
-                                WorkoutRow(imageName: image.imageName, workoutName: image.title, wkDescription: image.description)
+                        Section {
+                            NavigationLink(destination: TimerPage()) {
+                                HStack {
+                                    Image(systemName: "timer")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 40, height: 40)
+                                        .foregroundColor(.blue)
+                                        .padding(.vertical, 15)
+
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text("Interval Timer")
+                                            .fontWeight(.semibold)
+
+                                        Text("Configure reps, set time, and rest intervals")
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                    }
+                                }
+                            }
+                        }
+
+                        Section(header: Text("Drill Categories")) {
+                            ForEach(categories, id: \.category.id) { entry in
+                                NavigationLink(value: entry.category) {
+                                    WorkoutRow(
+                                        imageName: entry.category.imageName,
+                                        workoutName: entry.category.title,
+                                        wkDescription: entry.category.description
+                                    )
+                                }
                             }
                         }
                     }
                     .scrollContentBackground(.hidden)
-                    .navigationDestination(for: FullWorkList.self) { image in
-                        // Content for each drill category
-                        List {
-                            if image.title == "Cone Drills" {
-                                ForEach(coneDrills) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Core Strength" {
-                                ForEach(coreStrength) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            }else if image.title == "Explosiveness" {
-                                ForEach(explosiveness) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Ladder Drills" {
-                                ForEach(ladder) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Lower Body" {
-                                ForEach(lowerBody) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
-                            } else if image.title == "Upper Body" {
-                                ForEach(upperBody) { workout in
-                                    NavigationLink(destination: VideoDetailView(image: workout)) {
-                                        WorkoutRow(imageName: image.imageName, workoutName: workout.workoutName, wkDescription: workout.wkDescription)
-                                    }
-                                }
+                    .navigationDestination(for: FullWorkList.self) { category in
+                        let workouts = categories.first { $0.category.id == category.id }?.workouts ?? []
+                        List(workouts) { workout in
+                            NavigationLink(destination: VideoDetailView(image: workout)) {
+                                WorkoutRow(
+                                    imageName: category.imageName,
+                                    workoutName: workout.workoutName,
+                                    wkDescription: workout.wkDescription
+                                )
                             }
                         }
                         .background(
@@ -122,9 +111,9 @@ struct DrillsPage: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
-                            //.edgesIgnoringSafeArea(.all)
                         )
                         .scrollContentBackground(.hidden)
+                        .navigationTitle(category.title)
                     }
                 }
             }
@@ -132,6 +121,7 @@ struct DrillsPage: View {
         }
     }
 }
+
 #Preview {
     DrillsPage()
 }
