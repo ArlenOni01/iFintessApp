@@ -59,29 +59,33 @@ struct DrillsPage: View {
 
                 NavigationStack {
                     List {
+
+                        // MARK: Tools
                         Section {
                             NavigationLink(destination: TimerPage()) {
-                                HStack {
-                                    Image(systemName: "timer")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundColor(.blue)
-                                        .padding(.vertical, 15)
-
-                                    VStack(alignment: .leading, spacing: 5) {
-                                        Text("Interval Timer")
-                                            .fontWeight(.semibold)
-
-                                        Text("Configure reps, set time, and rest intervals")
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
+                                ToolRow(
+                                    icon: "timer",
+                                    color: .blue,
+                                    title: "Interval Timer",
+                                    subtitle: "Configure reps, set time, and rest intervals"
+                                )
                             }
                         }
 
-                        Section(header: Text("Drill Categories")) {
+                        // MARK: Reaction Drills
+                        Section(header: Text("Reaction Drills")) {
+                            NavigationLink(destination: ColorCallSetupView()) {
+                                ToolRow(
+                                    icon: "circle.fill",
+                                    color: .purple,
+                                    title: "Color Call",
+                                    subtitle: "React to colored cone signals"
+                                )
+                            }
+                        }
+
+                        // MARK: Drill Categories
+                        Section(header: Text("Drill Library")) {
                             ForEach(categories, id: \.category.id) { entry in
                                 NavigationLink(value: entry.category) {
                                     WorkoutRow(
@@ -119,6 +123,34 @@ struct DrillsPage: View {
             }
             .padding()
         }
+    }
+}
+
+// Shared row for non-workout navigation items (Timer, Reaction Drills)
+private struct ToolRow: View {
+    let icon: String
+    let color: Color
+    let title: String
+    let subtitle: String
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(systemName: icon)
+                .font(.title2)
+                .foregroundColor(color)
+                .frame(width: 44, height: 44)
+                .background(color.opacity(0.12))
+                .cornerRadius(10)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .fontWeight(.semibold)
+                Text(subtitle)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding(.vertical, 4)
     }
 }
 
