@@ -29,11 +29,20 @@ struct ReactionDrillResultsView: View {
 
             Spacer()
 
-            HStack(spacing: 16) {
-                StatCard(label: "Reps", value: "\(result.repsCompleted) / \(result.totalReps)")
-                StatCard(label: "Time", value: result.formattedTime)
+            if let avgReaction = result.formattedAvgReaction {
+                HStack(spacing: 12) {
+                    StatCard(label: "Reps", value: "\(result.repsCompleted) / \(result.totalReps)")
+                    StatCard(label: "Time", value: result.formattedTime)
+                    StatCard(label: "Avg React", value: avgReaction)
+                }
+                .padding(.horizontal)
+            } else {
+                HStack(spacing: 16) {
+                    StatCard(label: "Reps", value: "\(result.repsCompleted) / \(result.totalReps)")
+                    StatCard(label: "Time", value: result.formattedTime)
+                }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
 
             Spacer()
 

@@ -16,11 +16,17 @@ struct ContentView: View {
             ZStack {
                 TabView(selection: $selectedTab) {
                     HomePage()
+                        .tabItem { Label("Home", systemImage: "house.fill") }
                         .tag(0)
                     DrillsPage()
+                        .tabItem { Label("Train", systemImage: "flag.checkered") }
                         .tag(1)
                     MobilityPage()
+                        .tabItem { Label("Mobility", systemImage: "figure.flexibility") }
                         .tag(2)
+                    HistoryPage()
+                        .tabItem { Label("History", systemImage: "clock.fill") }
+                        .tag(3)
                 }
                 SideMenuView(isShowing: $showMenu, selectedTab: $selectedTab)
             }

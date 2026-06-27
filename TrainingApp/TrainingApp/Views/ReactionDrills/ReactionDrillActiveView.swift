@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SwiftData
 
 // Phases the drill moves through in order
 enum DrillPhase {
@@ -20,6 +21,7 @@ struct ReactionDrillActiveView: View {
     let config: ColorCallConfig
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
 
     // Drill state
     @State private var phase: DrillPhase = .countdown
@@ -32,6 +34,10 @@ struct ReactionDrillActiveView: View {
     @State private var elapsedTimer: AnyCancellable?
     @State private var pendingWork: DispatchWorkItem?
     @State private var elapsedSeconds: Int = 0
+
+    // Reaction time tracking
+    @State private var stimulusShownAt: Date?
+    @State private var reactionTimes: [Double] = []
 
     @StateObject private var soundPlayer = SoundPlayer()
 
@@ -49,7 +55,7 @@ struct ReactionDrillActiveView: View {
     }
 
     private var result: DrillResult {
-        DrillResult(repsCompleted: repsCompleted, totalReps: config.reps, elapsedSeconds: elapsedSeconds)
+        DrillResult(repsCompleted: repsCompleted, totalReps: config.reps, elapsedSeconds: elapsedSeconds, reactionTimes: reactionTimes)
     }
 
     private var isFinished: Bool {
@@ -186,10 +192,14 @@ struct ReactionDrillActiveView: View {
         guard let color = config.activeColors.randomElement() else { return }
         currentColor = color
         phase = .active
+        stimulusShownAt = Date()
         if config.soundEnabled { soundPlayer.playWhistle() }
 
         if !config.manualAdvance {
-            let work = DispatchWorkItem { repCompleted() }
+            let work = DispatchWorkItem {
+                self.reactionTimes.append(Double(self.config.stimulusDuration) * 1000)
+                self.repCompleted()
+            }
             pendingWork = work
             DispatchQueue.main.asyncAfter(
                 deadline: .now() + Double(config.stimulusDuration),
@@ -200,6 +210,10 @@ struct ReactionDrillActiveView: View {
 
     private func repCompleted() {
         pendingWork?.cancel()
+        if config.manualAdvance, let shownAt = stimulusShownAt {
+            reactionTimes.append(Date().timeIntervalSince(shownAt) * 1000)
+        }
+        stimulusShownAt = nil
         repsCompleted += 1
         if repsCompleted >= config.reps {
             finishSession()
@@ -211,12 +225,25 @@ struct ReactionDrillActiveView: View {
 
     private func finishSession() {
         cancelAll()
+        saveSession()
         phase = .finished
     }
 
     private func endSession() {
         cancelAll()
+        saveSession()
         phase = .finished
+    }
+
+    private func saveSession() {
+        let record = SessionRecord(
+            drillType: "colorCall",
+            repsCompleted: repsCompleted,
+            totalReps: config.reps,
+            elapsedSeconds: elapsedSeconds,
+            avgReactionTimeMs: result.avgReactionTimeMs
+        )
+        modelContext.insert(record)
     }
 
     private func restartDrill() {
@@ -224,6 +251,8 @@ struct ReactionDrillActiveView: View {
         repsCompleted = 0
         currentColor = nil
         elapsedSeconds = 0
+        reactionTimes = []
+        stimulusShownAt = nil
         startCountdown()
     }
 

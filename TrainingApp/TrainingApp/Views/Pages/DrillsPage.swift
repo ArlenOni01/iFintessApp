@@ -82,6 +82,22 @@ struct DrillsPage: View {
                                     subtitle: "React to colored cone signals"
                                 )
                             }
+                            NavigationLink(destination: NumberCallSetupView()) {
+                                ToolRow(
+                                    icon: "number.circle.fill",
+                                    color: Color(red: 0.0, green: 0.1, blue: 0.7),
+                                    title: "Number Call",
+                                    subtitle: "React to numbered cone signals"
+                                )
+                            }
+                            NavigationLink(destination: DirectionCallSetupView()) {
+                                ToolRow(
+                                    icon: "arrow.up.left.and.arrow.down.right.circle.fill",
+                                    color: .teal,
+                                    title: "Direction Call",
+                                    subtitle: "React to directional movement cues"
+                                )
+                            }
                         }
 
                         // MARK: Drill Categories
