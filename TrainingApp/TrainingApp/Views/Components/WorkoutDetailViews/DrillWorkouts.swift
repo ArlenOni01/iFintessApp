@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DrillList {
     static let coneDrillWork: [SpecificList] = [
-        .init(vidName: "cones", workoutName: "T-Drill", wkDescription: "Follow the following T-drill pattern.", isFaved: false),
-        .init(vidName: "cones", workoutName: "Box Drills", wkDescription: "Follow the following box drill patterns.", isFaved: false)
+        .init(vidName: "cones", workoutName: "T-Drill", wkDescription: "Follow the following T-drill pattern.", isFaved: false, footworkPattern: .tDrill),
+        .init(vidName: "cones", workoutName: "Box Drills", wkDescription: "Follow the following box drill patterns.", isFaved: false, footworkPattern: .boxDrill)
     ]
     
     static let coreStrengthWork: [SpecificList] = [

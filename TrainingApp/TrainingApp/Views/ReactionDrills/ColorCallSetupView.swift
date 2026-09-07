@@ -49,6 +49,7 @@ struct ColorCallSetupView: View {
                                 TextField("", value: $config.minRestSeconds, formatter: NumberFormatter())
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .keyboardType(.numberPad)
+                                    .foregroundColor(.primary)
                                     .frame(width: 80)
                             }
                             VStack(alignment: .leading, spacing: 6) {
@@ -57,6 +58,7 @@ struct ColorCallSetupView: View {
                                 TextField("", value: $config.maxRestSeconds, formatter: NumberFormatter())
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .keyboardType(.numberPad)
+                                    .foregroundColor(.primary)
                                     .frame(width: 80)
                             }
                             Spacer()
@@ -84,8 +86,9 @@ struct ColorCallSetupView: View {
                         Toggle("Adaptive Difficulty", isOn: $config.adaptiveDifficulty)
                         Text("Gets tougher when you're on point, eases up when you're not.")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.gray)
                     }
+                    .foregroundColor(.black)
                     .padding()
                     .background(Color.white.opacity(0.88))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -98,7 +101,7 @@ struct ColorCallSetupView: View {
                                 .font(.headline)
                             Text("Match the colors to the physical cones you've set up.")
                                 .font(.caption)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.gray)
                         }
 
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 12) {
@@ -122,6 +125,7 @@ struct ColorCallSetupView: View {
                             }
                         }
                     }
+                    .foregroundColor(.black)
                     .padding()
                     .background(Color.white.opacity(0.88))
                     .clipShape(RoundedRectangle(cornerRadius: 16))

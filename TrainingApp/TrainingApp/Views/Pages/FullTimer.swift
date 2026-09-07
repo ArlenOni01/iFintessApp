@@ -43,47 +43,54 @@ struct TimerPage: View {
                 }
 
             VStack(spacing: 20) {
-                Text("Timer")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.bottom)
-
-                HStack {
-                    VStack {
-                        Text("Reps")
-                        TextField("Enter reps", value: $reps, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .padding()
-
-                        Text("Min Rest (seconds)")
-                        TextField("Enter min rest time", value: $minRestTime, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .padding()
-                    }
-
-                    VStack {
-                        Text("Set Time (seconds)")
-                        TextField("Enter set time", value: $setTime, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .padding()
-
-                        Text("Max Rest (seconds)")
-                        TextField("Enter max rest time", value: $maxRestTime, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.numberPad)
-                            .padding()
-                    }
-                }
-
-                if isRunning {
-                    Text(isResting ? "Rest: \(restTimeRemaining)s" : "Set: \(activeTimeRemaining)s")
-                        .font(.largeTitle)
+                Group {
+                    Text("Timer")
+                        .font(.title)
                         .fontWeight(.bold)
-                        .padding()
+                        .padding(.bottom)
+
+                    HStack {
+                        VStack {
+                            Text("Reps")
+                            TextField("Enter reps", value: $reps, formatter: NumberFormatter())
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.primary)
+                                .padding()
+
+                            Text("Min Rest (seconds)")
+                            TextField("Enter min rest time", value: $minRestTime, formatter: NumberFormatter())
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.primary)
+                                .padding()
+                        }
+
+                        VStack {
+                            Text("Set Time (seconds)")
+                            TextField("Enter set time", value: $setTime, formatter: NumberFormatter())
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.primary)
+                                .padding()
+
+                            Text("Max Rest (seconds)")
+                            TextField("Enter max rest time", value: $maxRestTime, formatter: NumberFormatter())
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.primary)
+                                .padding()
+                        }
+                    }
+
+                    if isRunning {
+                        Text(isResting ? "Rest: \(restTimeRemaining)s" : "Set: \(activeTimeRemaining)s")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding()
+                    }
                 }
+                .foregroundColor(.black)
 
                 Button(isRunning ? "Stop Timer" : "Start Timer") {
                     if isRunning { stopTimer() } else { startTimer() }

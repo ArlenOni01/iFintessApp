@@ -19,12 +19,18 @@ struct VideoDetailView: View {
                 .cornerRadius(12)
                 .padding(.horizontal)
             
-            Image(image.vidName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 200)
-                .cornerRadius(12)
-                .padding(.horizontal)
+            if let pattern = image.footworkPattern {
+                FootworkAnimationView(pattern: pattern)
+                    .frame(height: 260)
+                    .padding(.horizontal)
+            } else {
+                Image(image.vidName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+            }
             
             Text(image.wkDescription)
                 .font(.title3)

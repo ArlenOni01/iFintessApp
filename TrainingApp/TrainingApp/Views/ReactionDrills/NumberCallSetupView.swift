@@ -47,6 +47,7 @@ struct NumberCallSetupView: View {
                                 TextField("", value: $config.minRestSeconds, formatter: NumberFormatter())
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .keyboardType(.numberPad)
+                                    .foregroundColor(.primary)
                                     .frame(width: 80)
                             }
                             VStack(alignment: .leading, spacing: 6) {
@@ -55,6 +56,7 @@ struct NumberCallSetupView: View {
                                 TextField("", value: $config.maxRestSeconds, formatter: NumberFormatter())
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .keyboardType(.numberPad)
+                                    .foregroundColor(.primary)
                                     .frame(width: 80)
                             }
                             Spacer()
@@ -82,8 +84,9 @@ struct NumberCallSetupView: View {
                         Toggle("Adaptive Difficulty", isOn: $config.adaptiveDifficulty)
                         Text("Gets tougher when you're on point, eases up when you're not.")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.gray)
                     }
+                    .foregroundColor(.black)
                     .padding()
                     .background(Color.white.opacity(0.88))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -96,7 +99,7 @@ struct NumberCallSetupView: View {
                                 .font(.headline)
                             Text("Set out this many numbered cones on the field.")
                                 .font(.caption)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.gray)
                         }
 
                         HStack {
@@ -120,6 +123,7 @@ struct NumberCallSetupView: View {
                             Spacer()
                         }
                     }
+                    .foregroundColor(.black)
                     .padding()
                     .background(Color.white.opacity(0.88))
                     .clipShape(RoundedRectangle(cornerRadius: 16))

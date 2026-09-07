@@ -27,6 +27,7 @@ struct SpecificList: Identifiable, Hashable {
     let workoutName: String
     let wkDescription: String
     var isFaved: Bool
+    var footworkPattern: FootworkPattern? = nil
 }
 
 struct ImageList {
