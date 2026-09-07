@@ -10,6 +10,9 @@ import SwiftUI
 struct ColorCallSetupView: View {
     @State private var config = ColorCallConfig()
     @State private var isDrillActive = false
+    @State private var sentToWatch = false
+
+    @ObservedObject private var watchSession = PhoneSessionCoordinator.shared
 
     var canStart: Bool { config.activeColors.count >= 2 }
 
@@ -75,6 +78,13 @@ struct ColorCallSetupView: View {
                         Divider()
 
                         Toggle("Sound cue on stimulus", isOn: $config.soundEnabled)
+
+                        Divider()
+
+                        Toggle("Adaptive Difficulty", isOn: $config.adaptiveDifficulty)
+                        Text("Gets tougher when you're on point, eases up when you're not.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                     .padding()
                     .background(Color.white.opacity(0.88))
@@ -137,6 +147,21 @@ struct ColorCallSetupView: View {
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
+
+                        if watchSession.isWatchAppInstalled {
+                            Button(action: sendToWatch) {
+                                Text(sentToWatch ? "Sent to Watch" : "Send to Watch")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color(red: 0.0, green: 0.1, blue: 0.7))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 10)
+                                    .background(Color.white.opacity(0.9))
+                                    .cornerRadius(12)
+                            }
+                            .disabled(!canStart)
+                            .padding(.horizontal)
+                        }
                     }
 
                     Spacer(minLength: 30)
@@ -147,8 +172,26 @@ struct ColorCallSetupView: View {
         .navigationTitle("Color Call")
         .navigationBarTitleDisplayMode(.large)
         .fullScreenCover(isPresented: $isDrillActive) {
-            ReactionDrillActiveView(config: config)
+            ReactionDrillActiveView(
+                engineConfig: ReactionDrillEngine.Configuration(
+                    stimulusPool: config.activeColors.map { $0.asStimulus },
+                    reps: config.reps,
+                    minRestSeconds: config.minRestSeconds,
+                    maxRestSeconds: config.maxRestSeconds,
+                    manualAdvance: config.manualAdvance,
+                    stimulusDuration: config.stimulusDuration,
+                    soundEnabled: config.soundEnabled,
+                    adaptiveDifficulty: config.adaptiveDifficulty
+                ),
+                presentation: .colorCall
+            )
         }
+    }
+
+    private func sendToWatch() {
+        watchSession.send(config: config.connectivityPayload)
+        sentToWatch = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { sentToWatch = false }
     }
 
     private func toggleColor(_ drillColor: DrillColor) {

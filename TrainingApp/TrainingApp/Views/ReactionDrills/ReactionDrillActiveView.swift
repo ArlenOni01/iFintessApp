@@ -6,61 +6,77 @@
 //
 
 import SwiftUI
-import Combine
 import SwiftData
 
-// Phases the drill moves through in order
-enum DrillPhase {
-    case countdown  // 3-2-1 before the first rep
-    case ready      // neutral pause between reps
-    case active     // stimulus is showing
-    case finished   // all reps done
+// Describes how a drill type should look, driven by ReactionDrillEngine's shared
+// phase/stimulus state. Color Call fills the screen with the stimulus's own color;
+// Number/Direction Call use a fixed background and show text/symbol instead.
+struct DrillPresentation {
+    let drillType: String
+    let activeBackground: Color
+    let useStimulusColorForBackground: Bool
+    let showSymbol: Bool
+    let activeTextSize: CGFloat
+
+    static let colorCall = DrillPresentation(
+        drillType: "colorCall",
+        activeBackground: .black,
+        useStimulusColorForBackground: true,
+        showSymbol: false,
+        activeTextSize: 88
+    )
+
+    static let numberCall = DrillPresentation(
+        drillType: "numberCall",
+        activeBackground: Color(red: 0.0, green: 0.1, blue: 0.7),
+        useStimulusColorForBackground: false,
+        showSymbol: false,
+        activeTextSize: 140
+    )
+
+    static let directionCall = DrillPresentation(
+        drillType: "directionCall",
+        activeBackground: Color(red: 0.05, green: 0.25, blue: 0.55),
+        useStimulusColorForBackground: false,
+        showSymbol: true,
+        activeTextSize: 44
+    )
 }
 
 struct ReactionDrillActiveView: View {
-    let config: ColorCallConfig
+    let engineConfig: ReactionDrillEngine.Configuration
+    let presentation: DrillPresentation
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
-    // Drill state
-    @State private var phase: DrillPhase = .countdown
-    @State private var countdownValue: Int = 3
-    @State private var currentColor: DrillColor? = nil
-    @State private var repsCompleted: Int = 0
-
-    // Timing
-    @State private var countdownTimer: AnyCancellable?
-    @State private var elapsedTimer: AnyCancellable?
-    @State private var pendingWork: DispatchWorkItem?
-    @State private var elapsedSeconds: Int = 0
-
-    // Reaction time tracking
-    @State private var stimulusShownAt: Date?
-    @State private var reactionTimes: [Double] = []
-
+    @StateObject private var engine: ReactionDrillEngine
     @StateObject private var soundPlayer = SoundPlayer()
+
+    init(engineConfig: ReactionDrillEngine.Configuration, presentation: DrillPresentation) {
+        self.engineConfig = engineConfig
+        self.presentation = presentation
+        _engine = StateObject(wrappedValue: ReactionDrillEngine(config: engineConfig))
+    }
 
     // MARK: - Computed helpers
 
     private var backgroundColor: Color {
-        switch phase {
+        switch engine.phase {
         case .countdown, .ready:
             return Color(red: 0.08, green: 0.08, blue: 0.12)
         case .active:
-            return currentColor?.color ?? .black
+            if presentation.useStimulusColorForBackground {
+                return engine.currentStimulus?.displayColor ?? .black
+            }
+            return presentation.activeBackground
         case .finished:
             return Color(red: 0.0, green: 0.1, blue: 0.7)
         }
     }
 
-    private var result: DrillResult {
-        DrillResult(repsCompleted: repsCompleted, totalReps: config.reps, elapsedSeconds: elapsedSeconds, reactionTimes: reactionTimes)
-    }
-
-    private var isFinished: Bool {
-        if case .finished = phase { return true }
-        return false
+    private var activeTextColor: Color {
+        presentation.useStimulusColorForBackground ? (engine.currentStimulus?.textColor ?? .white) : .white
     }
 
     // MARK: - Body
@@ -72,12 +88,22 @@ struct ReactionDrillActiveView: View {
 
             stimulusContent
 
-            if !isFinished {
+            if !engine.isFinished {
                 exitButton
             }
         }
-        .onAppear { startCountdown() }
-        .onDisappear { cancelAll() }
+        .onAppear {
+            engine.onStimulusShown = { _ in
+                if engineConfig.soundEnabled {
+                    soundPlayer.playWhistle()
+                }
+            }
+            engine.onFinished = { result in
+                saveSession(result: result)
+            }
+            engine.start()
+        }
+        .onDisappear { engine.teardown() }
         .statusBar(hidden: true)
     }
 
@@ -85,21 +111,21 @@ struct ReactionDrillActiveView: View {
 
     @ViewBuilder
     private var stimulusContent: some View {
-        switch phase {
+        switch engine.phase {
 
         case .countdown:
             VStack(spacing: 16) {
                 Text("Get Ready")
                     .font(.title2)
                     .foregroundColor(.white.opacity(0.6))
-                Text("\(countdownValue)")
+                Text("\(engine.countdownValue)")
                     .font(.system(size: 120, weight: .black))
                     .foregroundColor(.white)
             }
 
         case .ready:
             VStack(spacing: 20) {
-                Text("\(repsCompleted) / \(config.reps)")
+                Text("\(engine.repsCompleted) / \(engineConfig.reps)")
                     .font(.title3)
                     .foregroundColor(.white.opacity(0.4))
                 Circle()
@@ -112,23 +138,29 @@ struct ReactionDrillActiveView: View {
 
         case .active:
             VStack(spacing: 28) {
-                Text("\(repsCompleted + 1) / \(config.reps)")
+                Text("\(engine.repsCompleted + 1) / \(engineConfig.reps)")
                     .font(.title3)
-                    .foregroundColor((currentColor?.textColor ?? .white).opacity(0.65))
+                    .foregroundColor(activeTextColor.opacity(0.65))
 
-                Text(currentColor?.name.uppercased() ?? "")
-                    .font(.system(size: 88, weight: .black))
-                    .foregroundColor(currentColor?.textColor ?? .white)
+                if presentation.showSymbol, let symbol = engine.currentStimulus?.symbol {
+                    Image(systemName: symbol)
+                        .font(.system(size: 100, weight: .bold))
+                        .foregroundColor(activeTextColor)
+                }
 
-                if config.manualAdvance {
-                    Button(action: repCompleted) {
+                Text(engine.currentStimulus?.displayText ?? "")
+                    .font(.system(size: presentation.activeTextSize, weight: .black))
+                    .foregroundColor(activeTextColor)
+
+                if engineConfig.manualAdvance {
+                    Button(action: { engine.registerReaction() }) {
                         Text("Done")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(currentColor?.textColor ?? .white)
+                            .foregroundColor(activeTextColor)
                             .padding(.horizontal, 48)
                             .padding(.vertical, 18)
-                            .background((currentColor?.textColor ?? .white).opacity(0.18))
+                            .background(activeTextColor.opacity(0.18))
                             .cornerRadius(16)
                     }
                     .padding(.top, 20)
@@ -137,8 +169,8 @@ struct ReactionDrillActiveView: View {
 
         case .finished:
             ReactionDrillResultsView(
-                result: result,
-                onGoAgain: restartDrill,
+                result: engine.result,
+                onGoAgain: { engine.restart() },
                 onDone: { dismiss() }
             )
         }
@@ -148,7 +180,7 @@ struct ReactionDrillActiveView: View {
         VStack {
             HStack {
                 Spacer()
-                Button(action: endSession) {
+                Button(action: { engine.endSession() }) {
                     Image(systemName: "xmark.circle.fill")
                         .font(.system(size: 28))
                         .foregroundColor(.white.opacity(0.45))
@@ -159,116 +191,32 @@ struct ReactionDrillActiveView: View {
         }
     }
 
-    // MARK: - Timing engine
+    // MARK: - Persistence
 
-    private func startCountdown() {
-        phase = .countdown
-        countdownValue = 3
-        startElapsedTimer()
-
-        var count = 3
-        countdownTimer = Timer.publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .sink { _ in
-                count -= 1
-                if count > 0 {
-                    countdownValue = count
-                } else {
-                    countdownTimer?.cancel()
-                    phase = .ready
-                    scheduleNextStimulus()
-                }
-            }
-    }
-
-    private func scheduleNextStimulus() {
-        let delay = Double(Int.random(in: config.minRestSeconds...config.maxRestSeconds))
-        let work = DispatchWorkItem { showStimulus() }
-        pendingWork = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: work)
-    }
-
-    private func showStimulus() {
-        guard let color = config.activeColors.randomElement() else { return }
-        currentColor = color
-        phase = .active
-        stimulusShownAt = Date()
-        if config.soundEnabled { soundPlayer.playWhistle() }
-
-        if !config.manualAdvance {
-            let work = DispatchWorkItem {
-                self.reactionTimes.append(Double(self.config.stimulusDuration) * 1000)
-                self.repCompleted()
-            }
-            pendingWork = work
-            DispatchQueue.main.asyncAfter(
-                deadline: .now() + Double(config.stimulusDuration),
-                execute: work
-            )
-        }
-    }
-
-    private func repCompleted() {
-        pendingWork?.cancel()
-        if config.manualAdvance, let shownAt = stimulusShownAt {
-            reactionTimes.append(Date().timeIntervalSince(shownAt) * 1000)
-        }
-        stimulusShownAt = nil
-        repsCompleted += 1
-        if repsCompleted >= config.reps {
-            finishSession()
-        } else {
-            phase = .ready
-            scheduleNextStimulus()
-        }
-    }
-
-    private func finishSession() {
-        cancelAll()
-        saveSession()
-        phase = .finished
-    }
-
-    private func endSession() {
-        cancelAll()
-        saveSession()
-        phase = .finished
-    }
-
-    private func saveSession() {
+    private func saveSession(result: DrillResult) {
         let record = SessionRecord(
-            drillType: "colorCall",
-            repsCompleted: repsCompleted,
-            totalReps: config.reps,
-            elapsedSeconds: elapsedSeconds,
+            drillType: presentation.drillType,
+            repsCompleted: result.repsCompleted,
+            totalReps: result.totalReps,
+            elapsedSeconds: result.elapsedSeconds,
             avgReactionTimeMs: result.avgReactionTimeMs
         )
         modelContext.insert(record)
     }
-
-    private func restartDrill() {
-        cancelAll()
-        repsCompleted = 0
-        currentColor = nil
-        elapsedSeconds = 0
-        reactionTimes = []
-        stimulusShownAt = nil
-        startCountdown()
-    }
-
-    private func startElapsedTimer() {
-        elapsedTimer = Timer.publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .sink { _ in elapsedSeconds += 1 }
-    }
-
-    private func cancelAll() {
-        countdownTimer?.cancel()
-        elapsedTimer?.cancel()
-        pendingWork?.cancel()
-    }
 }
 
 #Preview {
-    ReactionDrillActiveView(config: ColorCallConfig())
+    ReactionDrillActiveView(
+        engineConfig: ReactionDrillEngine.Configuration(
+            stimulusPool: DrillColor.available.map { $0.asStimulus },
+            reps: 10,
+            minRestSeconds: 2,
+            maxRestSeconds: 5,
+            manualAdvance: true,
+            stimulusDuration: 3,
+            soundEnabled: true,
+            adaptiveDifficulty: true
+        ),
+        presentation: .colorCall
+    )
 }

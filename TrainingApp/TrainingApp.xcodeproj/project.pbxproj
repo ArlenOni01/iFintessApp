@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14BE50F8F291D4ADC66350BB /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
+		72A3CB054AD3EA553C5A2737 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
+		B275E1B106C7B1E950DCB6BD /* ReactionDrillEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */; };
 		DC1325022CB4C9F20014185A /* FullTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1325012CB4C9E40014185A /* FullTimer.swift */; };
 		DC3F22902B2E7AF800BE575B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC3F228F2B2E7AF800BE575B /* GoogleService-Info.plist */; };
 		DC3F22932B2E7D5B00BE575B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC3F22922B2E7D5B00BE575B /* FirebaseAnalytics */; };
@@ -61,6 +64,14 @@
 		DCBB00042FA46FEF009B6F25 /* NumberCallSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB00032FA46FEF009B6F25 /* NumberCallSetupView.swift */; };
 		DCBB00062FA46FEF009B6F25 /* DirectionCallSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB00052FA46FEF009B6F25 /* DirectionCallSetupView.swift */; };
 		DCBB00082FA46FEF009B6F25 /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB00072FA46FEF009B6F25 /* HistoryPage.swift */; };
+		DCC8EA07304F2EB20036250C /* TrainingApp Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4B21C51228B910150ACD913 /* ReactionDrillModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D019F2FA46FEF009B6F25 /* ReactionDrillModels.swift */; };
+		189A9770EE0B2C8070453624 /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
+		83E3A6F599E451F3E82906E7 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
+		BD764D47E6A0BFA6916DB840 /* ReactionDrillEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */; };
+		6B6EB5656E176334964FC01E /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
+		D81214C00E6637962DEF5AE5 /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
+		44F26CB17DCAA00398803799 /* PhoneSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +89,46 @@
 			remoteGlobalIDString = DC1324C72CA19C8E0014185A;
 			remoteInfo = Phesian;
 		};
+		DCC8EA08304F2EB20036250C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC8EA05304F2EB20036250C;
+			remoteInfo = "TrainingApp Watch App Watch App";
+		};
+		DCC8EA16304F2EB30036250C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC8EA05304F2EB20036250C;
+			remoteInfo = "TrainingApp Watch App Watch App";
+		};
+		DCC8EA20304F2EB30036250C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC8EA05304F2EB20036250C;
+			remoteInfo = "TrainingApp Watch App Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DCC8EA29304F2EB30036250C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DCC8EA07304F2EB20036250C /* TrainingApp Watch App Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BADDDFAC5173C17DE632181C /* DrillStimulus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillStimulus.swift; sourceTree = "<group>"; };
+		CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDrillEngine.swift; sourceTree = "<group>"; };
 		DC1324C82CA19C8E0014185A /* Phesian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phesian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1324D72CA19C900014185A /* PhesianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhesianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1324E12CA19C900014185A /* PhesianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhesianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +161,20 @@
 		DCBB00032FA46FEF009B6F25 /* NumberCallSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCallSetupView.swift; sourceTree = "<group>"; };
 		DCBB00052FA46FEF009B6F25 /* DirectionCallSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionCallSetupView.swift; sourceTree = "<group>"; };
 		DCBB00072FA46FEF009B6F25 /* HistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPage.swift; sourceTree = "<group>"; };
+		DCC8EA01304F2EB20036250C /* TrainingApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TrainingApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TrainingApp Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC8EA15304F2EB30036250C /* TrainingApp Watch App Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainingApp Watch App Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC8EA1F304F2EB30036250C /* TrainingApp Watch App Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainingApp Watch App Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveDifficulty.swift; sourceTree = "<group>"; };
+		284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillResultPayload.swift; sourceTree = "<group>"; };
+		F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSessionCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DCC8EA0A304F2EB20036250C /* TrainingApp Watch App Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "TrainingApp Watch App Watch App"; sourceTree = "<group>"; };
+		DCC8EA18304F2EB30036250C /* TrainingApp Watch App Watch AppTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "TrainingApp Watch App Watch AppTests"; sourceTree = "<group>"; };
+		DCC8EA22304F2EB30036250C /* TrainingApp Watch App Watch AppUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "TrainingApp Watch App Watch AppUITests"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DC1324C52CA19C8E0014185A /* Frameworks */ = {
@@ -171,13 +232,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC8EA03304F2EB20036250C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA12304F2EB30036250C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA1C304F2EB30036250C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6469E44D0EF7FC3EEA7FEB50 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C90D0026D2F74D02BA096B54 /* DrillEngine */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C90D0026D2F74D02BA096B54 /* DrillEngine */ = {
+			isa = PBXGroup;
+			children = (
+				BADDDFAC5173C17DE632181C /* DrillStimulus.swift */,
+				F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */,
+				CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */,
+				284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */,
+			);
+			path = DrillEngine;
+			sourceTree = "<group>";
+		};
 		DC3F22862B2D281B00BE575B /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				DC7D01A62FA47047009B6F25 /* SoundPlayer.swift */,
+				F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */,
 				DC3F22DB2B314E0300BE575B /* WorkoutDetailViews */,
 				DCA8BC0B2B1646BE004B1D6C /* Sounds */,
 				DC3F22E02B315EEF00BE575B /* VideoDetailView.swift */,
@@ -223,6 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				DCA8BBE72AF04892004B1D6C /* TrainingApp */,
+				DCC8EA0A304F2EB20036250C /* TrainingApp Watch App Watch App */,
+				DCC8EA18304F2EB30036250C /* TrainingApp Watch App Watch AppTests */,
+				DCC8EA22304F2EB30036250C /* TrainingApp Watch App Watch AppUITests */,
 				DCA8BBE62AF04892004B1D6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -234,6 +339,10 @@
 				DC1324C82CA19C8E0014185A /* Phesian.app */,
 				DC1324D72CA19C900014185A /* PhesianTests.xctest */,
 				DC1324E12CA19C900014185A /* PhesianUITests.xctest */,
+				DCC8EA01304F2EB20036250C /* TrainingApp Watch App.app */,
+				DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */,
+				DCC8EA15304F2EB30036250C /* TrainingApp Watch App Watch AppTests.xctest */,
+				DCC8EA1F304F2EB30036250C /* TrainingApp Watch App Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +352,7 @@
 			children = (
 				DC3F22E62B43633800BE575B /* TrainingApp.entitlements */,
 				DCBB00092FA46FEF009B6F25 /* Models */,
+				6469E44D0EF7FC3EEA7FEB50 /* Shared */,
 				DCA8BBF72AF366DF004B1D6C /* Views */,
 				DCA8BBE82AF04892004B1D6C /* TrainingAppApp.swift */,
 				DCA8BBEC2AF04893004B1D6C /* Assets.xcassets */,
@@ -369,6 +479,7 @@
 				DCA8BBE12AF04892004B1D6C /* Sources */,
 				DCA8BBE22AF04892004B1D6C /* Frameworks */,
 				DCA8BBE32AF04892004B1D6C /* Resources */,
+				DCBB00AA2FA46FEF009B6F25 /* Fix Bundle Identifiers */,
 			);
 			buildRules = (
 			);
@@ -408,6 +519,93 @@
 			productReference = DCA8BBE52AF04892004B1D6C /* Phesian.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DCC8EA00304F2EB20036250C /* TrainingApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC8EA31304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App" */;
+			buildPhases = (
+				DCC8E9FF304F2EB20036250C /* Resources */,
+				DCC8EA29304F2EB30036250C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC8EA09304F2EB20036250C /* PBXTargetDependency */,
+			);
+			name = "TrainingApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "TrainingApp Watch App";
+			productReference = DCC8EA01304F2EB20036250C /* TrainingApp Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC8EA30304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch App" */;
+			buildPhases = (
+				DCC8EA02304F2EB20036250C /* Sources */,
+				DCC8EA03304F2EB20036250C /* Frameworks */,
+				DCC8EA04304F2EB20036250C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DCC8EA0A304F2EB20036250C /* TrainingApp Watch App Watch App */,
+			);
+			name = "TrainingApp Watch App Watch App";
+			packageProductDependencies = (
+			);
+			productName = "TrainingApp Watch App Watch App";
+			productReference = DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCC8EA14304F2EB30036250C /* TrainingApp Watch App Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC8EA32304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch AppTests" */;
+			buildPhases = (
+				DCC8EA11304F2EB30036250C /* Sources */,
+				DCC8EA12304F2EB30036250C /* Frameworks */,
+				DCC8EA13304F2EB30036250C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC8EA17304F2EB30036250C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DCC8EA18304F2EB30036250C /* TrainingApp Watch App Watch AppTests */,
+			);
+			name = "TrainingApp Watch App Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "TrainingApp Watch App Watch AppTests";
+			productReference = DCC8EA15304F2EB30036250C /* TrainingApp Watch App Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCC8EA1E304F2EB30036250C /* TrainingApp Watch App Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC8EA33304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch AppUITests" */;
+			buildPhases = (
+				DCC8EA1B304F2EB30036250C /* Sources */,
+				DCC8EA1C304F2EB30036250C /* Frameworks */,
+				DCC8EA1D304F2EB30036250C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC8EA21304F2EB30036250C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DCC8EA22304F2EB30036250C /* TrainingApp Watch App Watch AppUITests */,
+			);
+			name = "TrainingApp Watch App Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "TrainingApp Watch App Watch AppUITests";
+			productReference = DCC8EA1F304F2EB30036250C /* TrainingApp Watch App Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -415,7 +613,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					DC1324C72CA19C8E0014185A = {
@@ -431,6 +629,20 @@
 					};
 					DCA8BBE42AF04892004B1D6C = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					DCC8EA00304F2EB20036250C = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					DCC8EA05304F2EB20036250C = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					DCC8EA14304F2EB30036250C = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = DCC8EA05304F2EB20036250C;
+					};
+					DCC8EA1E304F2EB30036250C = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = DCC8EA05304F2EB20036250C;
 					};
 				};
 			};
@@ -454,6 +666,10 @@
 				DC1324C72CA19C8E0014185A /* Phesian */,
 				DC1324D62CA19C900014185A /* PhesianTests */,
 				DC1324E02CA19C900014185A /* PhesianUITests */,
+				DCC8EA00304F2EB20036250C /* TrainingApp Watch App */,
+				DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */,
+				DCC8EA14304F2EB30036250C /* TrainingApp Watch App Watch AppTests */,
+				DCC8EA1E304F2EB30036250C /* TrainingApp Watch App Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -491,7 +707,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC8E9FF304F2EB20036250C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA04304F2EB20036250C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA13304F2EB30036250C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA1D304F2EB30036250C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DCBB00AA2FA46FEF009B6F25 /* Fix Bundle Identifiers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Fix Bundle Identifiers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\" -name \"*.framework\" | while read framework; do\n  PLIST=\"$framework/Info.plist\"\n  if [ -f \"$PLIST\" ]; then\n    ID=$(defaults read \"$PLIST\" CFBundleIdentifier 2>/dev/null)\n    FIXED=$(echo \"$ID\" | sed \"s/[^a-zA-Z0-9.-]/-/g\")\n    if [ \"$ID\" != \"$FIXED\" ]; then\n      defaults write \"$PLIST\" CFBundleIdentifier \"$FIXED\"\n    fi\n  fi\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC1324C42CA19C8E0014185A /* Sources */ = {
@@ -542,6 +807,37 @@
 				DCBB00042FA46FEF009B6F25 /* NumberCallSetupView.swift in Sources */,
 				DCBB00062FA46FEF009B6F25 /* DirectionCallSetupView.swift in Sources */,
 				DCBB00082FA46FEF009B6F25 /* HistoryPage.swift in Sources */,
+				14BE50F8F291D4ADC66350BB /* DrillStimulus.swift in Sources */,
+				72A3CB054AD3EA553C5A2737 /* AdaptiveDifficulty.swift in Sources */,
+				B275E1B106C7B1E950DCB6BD /* ReactionDrillEngine.swift in Sources */,
+				6B6EB5656E176334964FC01E /* DrillResultPayload.swift in Sources */,
+				44F26CB17DCAA00398803799 /* PhoneSessionCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA02304F2EB20036250C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B21C51228B910150ACD913 /* ReactionDrillModels.swift in Sources */,
+				189A9770EE0B2C8070453624 /* DrillStimulus.swift in Sources */,
+				83E3A6F599E451F3E82906E7 /* AdaptiveDifficulty.swift in Sources */,
+				BD764D47E6A0BFA6916DB840 /* ReactionDrillEngine.swift in Sources */,
+				D81214C00E6637962DEF5AE5 /* DrillResultPayload.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA11304F2EB30036250C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC8EA1B304F2EB30036250C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +853,21 @@
 			isa = PBXTargetDependency;
 			target = DC1324C72CA19C8E0014185A /* Phesian */;
 			targetProxy = DC1324E22CA19C900014185A /* PBXContainerItemProxy */;
+		};
+		DCC8EA09304F2EB20036250C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */;
+			targetProxy = DCC8EA08304F2EB20036250C /* PBXContainerItemProxy */;
+		};
+		DCC8EA17304F2EB30036250C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */;
+			targetProxy = DCC8EA16304F2EB30036250C /* PBXContainerItemProxy */;
+		};
+		DCC8EA21304F2EB30036250C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */;
+			targetProxy = DCC8EA20304F2EB30036250C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -870,6 +1181,186 @@
 			};
 			name = Release;
 		};
+		DCC8EA27304F2EB30036250C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = "TrainingApp Watch App";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCC8EA28304F2EB30036250C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = "TrainingApp Watch App";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCC8EA2A304F2EB30036250C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "TrainingApp Watch App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		DCC8EA2B304F2EB30036250C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "TrainingApp Watch App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		DCC8EA2C304F2EB30036250C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainingApp Watch App Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrainingApp Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		DCC8EA2D304F2EB30036250C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainingApp Watch App Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrainingApp Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		DCC8EA2E304F2EB30036250C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TrainingApp Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		DCC8EA2F304F2EB30036250C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arlensapp.TrainingApp-Watch-App-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TrainingApp Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -914,6 +1405,42 @@
 			buildConfigurations = (
 				DCA8BBF42AF04893004B1D6C /* Debug */,
 				DCA8BBF52AF04893004B1D6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC8EA30304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC8EA2A304F2EB30036250C /* Debug */,
+				DCC8EA2B304F2EB30036250C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC8EA31304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC8EA27304F2EB30036250C /* Debug */,
+				DCC8EA28304F2EB30036250C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC8EA32304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC8EA2C304F2EB30036250C /* Debug */,
+				DCC8EA2D304F2EB30036250C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC8EA33304F2EB30036250C /* Build configuration list for PBXNativeTarget "TrainingApp Watch App Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC8EA2E304F2EB30036250C /* Debug */,
+				DCC8EA2F304F2EB30036250C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

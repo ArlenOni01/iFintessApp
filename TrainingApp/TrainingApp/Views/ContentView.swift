@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @State private var showMenu = false
     @State private var selectedTab = 0
+
+    @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         NavigationStack {
@@ -40,6 +43,18 @@ struct ContentView: View {
                         Image(systemName: "line.3.horizontal")
                     })
                 }
+            }
+        }
+        .onAppear {
+            PhoneSessionCoordinator.shared.onResultReceived = { payload in
+                let record = SessionRecord(
+                    drillType: payload.drillType,
+                    repsCompleted: payload.repsCompleted,
+                    totalReps: payload.totalReps,
+                    elapsedSeconds: payload.elapsedSeconds,
+                    avgReactionTimeMs: payload.avgReactionTimeMs
+                )
+                modelContext.insert(record)
             }
         }
     }

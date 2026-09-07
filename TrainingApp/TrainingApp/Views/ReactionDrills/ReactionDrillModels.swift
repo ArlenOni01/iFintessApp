@@ -38,6 +38,7 @@ struct ColorCallConfig {
     var manualAdvance: Bool = true
     var stimulusDuration: Int = 3
     var soundEnabled: Bool = true
+    var adaptiveDifficulty: Bool = true
     var activeColors: [DrillColor] = Array(DrillColor.available.prefix(4))
 }
 
@@ -50,6 +51,7 @@ struct NumberCallConfig {
     var manualAdvance: Bool = true
     var stimulusDuration: Int = 3
     var soundEnabled: Bool = true
+    var adaptiveDifficulty: Bool = true
     var coneCount: Int = 4
 }
 
@@ -80,6 +82,7 @@ struct DirectionCallConfig {
     var manualAdvance: Bool = true
     var stimulusDuration: Int = 3
     var soundEnabled: Bool = true
+    var adaptiveDifficulty: Bool = true
     var activeDirections: [DirectionStimulus] = Array(DirectionStimulus.available.prefix(4))
 }
 
