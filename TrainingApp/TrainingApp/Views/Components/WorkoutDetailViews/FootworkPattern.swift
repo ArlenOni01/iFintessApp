@@ -31,7 +31,7 @@ enum FootworkGridPoint: CaseIterable, Hashable {
     }
 }
 
-enum FootSide: Hashable {
+enum FootSide: CaseIterable, Hashable {
     case left, right
 }
 

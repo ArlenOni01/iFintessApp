@@ -55,4 +55,25 @@ struct LadderPattern: Hashable {
             )
         }
     )
+
+    /// A "double time" version of One Foot: still running (not hopping), but
+    /// the right foot then the left foot each touch down in turn within the
+    /// same square before advancing to the next square, bottom-to-top.
+    static let twoFoot = LadderPattern(
+        squareCount: 6,
+        steps: stride(from: 5, through: 0, by: -1).flatMap { squareIndex in
+            [
+                LadderStep(
+                    squareIndex: squareIndex,
+                    placements: [LadderFootPlacement(.right, xOffset: 0.22)],
+                    action: "Right Foot"
+                ),
+                LadderStep(
+                    squareIndex: squareIndex,
+                    placements: [LadderFootPlacement(.left, xOffset: -0.22)],
+                    action: "Left Foot"
+                )
+            ]
+        }
+    )
 }

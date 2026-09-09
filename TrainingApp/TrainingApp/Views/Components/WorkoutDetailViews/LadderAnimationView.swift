@@ -20,6 +20,22 @@ struct LadderAnimationView: View {
 
     private var currentStep: LadderStep { pattern.steps[stepIndex] }
 
+    /// The most recent step (searching backward, wrapping around) that
+    /// placed `side`. Since patterns place one side at a time, this is each
+    /// foot's own last-known spot — so each foot's marker only moves when
+    /// that foot actually takes a step, straight up the ladder, never
+    /// sideways toward the other foot's lane.
+    private func mostRecentStep(for side: FootSide) -> LadderStep {
+        var i = stepIndex
+        while true {
+            let step = pattern.steps[i]
+            if step.placements.contains(where: { $0.foot == side }) {
+                return step
+            }
+            i = (i - 1 + pattern.steps.count) % pattern.steps.count
+        }
+    }
+
     var body: some View {
         VStack(spacing: 10) {
             GeometryReader { geo in
@@ -44,12 +60,22 @@ struct LadderAnimationView: View {
                         .stroke(Color(.systemGray2), style: StrokeStyle(lineWidth: railLineWidth, lineCap: .round))
                         .padding(.horizontal, railInset)
 
-                    ForEach(Array(currentStep.placements.enumerated()), id: \.offset) { _, placement in
-                        Ellipse()
-                            .fill(accentColor.opacity(placement.foot == .left ? 1 : 0.75))
-                            .frame(width: laneWidth * 0.3, height: squareHeight * 0.72)
-                            .position(x: railInset + laneWidth * (0.5 + placement.xOffset), y: squareCenterY)
-                            .animation(.easeInOut(duration: stepDuration), value: stepIndex)
+                    // One marker per foot, each tracking only its own most
+                    // recent placement — so every marker travels straight up
+                    // its own lane, never diagonally toward the other foot.
+                    ForEach(FootSide.allCases, id: \.self) { side in
+                        let step = mostRecentStep(for: side)
+                        if let placement = step.placements.first(where: { $0.foot == side }) {
+                            let isActive = currentStep.placements.contains { $0.foot == side }
+                            Ellipse()
+                                .fill(accentColor.opacity(isActive ? 1 : 0.35))
+                                .frame(width: laneWidth * 0.3, height: squareHeight * 0.72)
+                                .position(
+                                    x: railInset + laneWidth * (0.5 + placement.xOffset),
+                                    y: (CGFloat(step.squareIndex) + 0.5) * squareHeight
+                                )
+                                .animation(.easeInOut(duration: stepDuration), value: stepIndex)
+                        }
                     }
                 }
             }
