@@ -36,15 +36,15 @@ struct HomePage: View {
     private var lastDrillType: String? { sessions.first?.drillType }
 
     var body: some View {
-        ScrollView {
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [Color(red: 0.0, green: 0.1, blue: 0.7), Color.teal.opacity(0.3)]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .edgesIgnoringSafeArea(.all)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.0, green: 0.1, blue: 0.7), Color.teal.opacity(0.3)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
 
+            ScrollView {
                 VStack(spacing: 24) {
 
                     // MARK: Header
@@ -101,14 +101,6 @@ struct HomePage: View {
                 }
             }
         }
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color(red: 0.0, green: 0.1, blue: 0.7), Color.teal.opacity(0.3)]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
-        )
     }
 }
 
