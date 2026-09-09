@@ -28,6 +28,7 @@ struct SpecificList: Identifiable, Hashable {
     let wkDescription: String
     var isFaved: Bool
     var footworkPattern: FootworkPattern? = nil
+    var ladderPattern: LadderPattern? = nil
 }
 
 struct ImageList {

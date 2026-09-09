@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		14BE50F8F291D4ADC66350BB /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
+		CFF8CEECAE10AFC465C90B49 /* LadderPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */; };
+		913A87BFC43AC3C741BA0132 /* LadderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */; };
 		F2C97649A4A505A130E98EAA /* FootworkPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */; };
 		739508D4B1FFF80B8A493703 /* FootworkAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */; };
 		72A3CB054AD3EA553C5A2737 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
@@ -141,6 +143,8 @@
 		DC72B68E2B1F09EF008C7392 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DC72B6922B1FFE32008C7392 /* MobWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobWorkouts.swift; sourceTree = "<group>"; };
 		DC72B6942B21A99F008C7392 /* DrillWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillWorkouts.swift; sourceTree = "<group>"; };
+		F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderPattern.swift; sourceTree = "<group>"; };
+		410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAnimationView.swift; sourceTree = "<group>"; };
 		C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPattern.swift; sourceTree = "<group>"; };
 		AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkAnimationView.swift; sourceTree = "<group>"; };
 		DC7D019D2FA46FEF009B6F25 /* ColorCallSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCallSetupView.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				DC72B6922B1FFE32008C7392 /* MobWorkouts.swift */,
 				C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */,
 				AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */,
+				F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */,
+				410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */,
 			);
 			path = WorkoutDetailViews;
 			sourceTree = "<group>";
@@ -798,6 +804,8 @@
 				DC72B6952B21A99F008C7392 /* DrillWorkouts.swift in Sources */,
 				F2C97649A4A505A130E98EAA /* FootworkPattern.swift in Sources */,
 				739508D4B1FFF80B8A493703 /* FootworkAnimationView.swift in Sources */,
+				CFF8CEECAE10AFC465C90B49 /* LadderPattern.swift in Sources */,
+				913A87BFC43AC3C741BA0132 /* LadderAnimationView.swift in Sources */,
 				DC72B68F2B1F09EF008C7392 /* Image.swift in Sources */,
 				DC7D01A72FA47047009B6F25 /* SoundPlayer.swift in Sources */,
 				DC9416142CD9C06200130DFB /* SideMenuHeaderView.swift in Sources */,

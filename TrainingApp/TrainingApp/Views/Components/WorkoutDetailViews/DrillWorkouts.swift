@@ -26,7 +26,7 @@ struct DrillList {
     ]
     
     static let ladderWork: [SpecificList] = [
-        .init(vidName: "ladders", workoutName: "One Foot", wkDescription: "One foot in each hole on a sprint.", isFaved: false),
+        .init(vidName: "ladders", workoutName: "One Foot", wkDescription: "One foot in each hole on a sprint.", isFaved: false, ladderPattern: .oneFoot),
         .init(vidName: "ladders", workoutName: "Two Foot", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false),
         .init(vidName: "ladders", workoutName: "TypeWriter", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false),
         .init(vidName: "ladders", workoutName: "Reverse Typewriter", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false),

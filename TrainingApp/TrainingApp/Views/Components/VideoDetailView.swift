@@ -23,6 +23,10 @@ struct VideoDetailView: View {
                 FootworkAnimationView(pattern: pattern)
                     .frame(height: 260)
                     .padding(.horizontal)
+            } else if let ladderPattern = image.ladderPattern {
+                LadderAnimationView(pattern: ladderPattern)
+                    .frame(height: 340)
+                    .padding(.horizontal)
             } else {
                 Image(image.vidName)
                     .resizable()
