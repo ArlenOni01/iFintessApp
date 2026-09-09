@@ -72,4 +72,54 @@ struct FootworkPattern: Hashable {
             FootworkStep(point: .bottomMid, leadFoot: .left, action: "Backpedal")
         ]
     )
+
+    /// Traces the letter N: up the left side, diagonally back to the far
+    /// corner, then up the right side.
+    static let nDrill = FootworkPattern(
+        activeCones: [.bottomLeft, .topLeft, .bottomRight, .topRight],
+        steps: [
+            FootworkStep(point: .bottomLeft, leadFoot: .right, action: "Start"),
+            FootworkStep(point: .topLeft, leadFoot: .left, action: "Sprint Forward"),
+            FootworkStep(point: .bottomRight, leadFoot: .right, action: "Backpedal Diagonal"),
+            FootworkStep(point: .topRight, leadFoot: .left, action: "Sprint Diagonal"),
+            FootworkStep(point: .bottomLeft, leadFoot: .right, action: "Backpedal Diagonal")
+        ]
+    )
+
+    /// Horizontal mirror of the N-Drill — same shape, opposite side lead.
+    static let nDrillMirror = FootworkPattern(
+        activeCones: [.bottomRight, .topRight, .bottomLeft, .topLeft],
+        steps: [
+            FootworkStep(point: .bottomRight, leadFoot: .left, action: "Start"),
+            FootworkStep(point: .topRight, leadFoot: .right, action: "Sprint Forward"),
+            FootworkStep(point: .bottomLeft, leadFoot: .left, action: "Backpedal Diagonal"),
+            FootworkStep(point: .topLeft, leadFoot: .right, action: "Sprint Diagonal"),
+            FootworkStep(point: .bottomRight, leadFoot: .left, action: "Backpedal Diagonal")
+        ]
+    )
+
+    /// Traces the letter Z: shuffle across the front, diagonally back, then
+    /// shuffle across the back.
+    static let zDrill = FootworkPattern(
+        activeCones: [.topLeft, .topRight, .bottomLeft, .bottomRight],
+        steps: [
+            FootworkStep(point: .topLeft, leadFoot: .right, action: "Start"),
+            FootworkStep(point: .topRight, leadFoot: .right, action: "Shuffle Right"),
+            FootworkStep(point: .bottomLeft, leadFoot: .left, action: "Diagonal Back Left"),
+            FootworkStep(point: .bottomRight, leadFoot: .right, action: "Shuffle Right"),
+            FootworkStep(point: .topLeft, leadFoot: .left, action: "Sprint Forward")
+        ]
+    )
+
+    /// Horizontal mirror of the Z-Drill — same shape, opposite side lead.
+    static let zDrillMirror = FootworkPattern(
+        activeCones: [.topRight, .topLeft, .bottomRight, .bottomLeft],
+        steps: [
+            FootworkStep(point: .topRight, leadFoot: .left, action: "Start"),
+            FootworkStep(point: .topLeft, leadFoot: .left, action: "Shuffle Left"),
+            FootworkStep(point: .bottomRight, leadFoot: .right, action: "Diagonal Back Right"),
+            FootworkStep(point: .bottomLeft, leadFoot: .left, action: "Shuffle Left"),
+            FootworkStep(point: .topRight, leadFoot: .right, action: "Sprint Forward")
+        ]
+    )
 }

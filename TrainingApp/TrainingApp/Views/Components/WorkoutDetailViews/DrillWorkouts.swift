@@ -10,7 +10,11 @@ import SwiftUI
 struct DrillList {
     static let coneDrillWork: [SpecificList] = [
         .init(vidName: "cones", workoutName: "T-Drill", wkDescription: "Follow the following T-drill pattern.", isFaved: false, footworkPattern: .tDrill),
-        .init(vidName: "cones", workoutName: "Box Drills", wkDescription: "Follow the following box drill patterns.", isFaved: false, footworkPattern: .boxDrill)
+        .init(vidName: "cones", workoutName: "Box Drills", wkDescription: "Follow the following box drill patterns.", isFaved: false, footworkPattern: .boxDrill),
+        .init(vidName: "cones", workoutName: "N-Drill", wkDescription: "Follow the following N-drill pattern.", isFaved: false, footworkPattern: .nDrill),
+        .init(vidName: "cones", workoutName: "N-Drill Mirror", wkDescription: "Follow the following N-drill pattern, mirrored.", isFaved: false, footworkPattern: .nDrillMirror),
+        .init(vidName: "cones", workoutName: "Z-Drill", wkDescription: "Follow the following Z-drill pattern.", isFaved: false, footworkPattern: .zDrill),
+        .init(vidName: "cones", workoutName: "Z-Drill Mirror", wkDescription: "Follow the following Z-drill pattern, mirrored.", isFaved: false, footworkPattern: .zDrillMirror)
     ]
     
     static let coreStrengthWork: [SpecificList] = [
