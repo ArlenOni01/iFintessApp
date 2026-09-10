@@ -29,6 +29,11 @@ struct SpecificList: Identifiable, Hashable {
     var isFaved: Bool
     var footworkPattern: FootworkPattern? = nil
     var ladderPattern: LadderPattern? = nil
+    /// A second photo (e.g. the finish position of a stretch or lift) shown
+    /// stacked with `vidName` as a labeled Start/Finish pair. Exercises with
+    /// no animation fall back to this pair when set, or a single photo when
+    /// it isn't.
+    var vidName2: String? = nil
 }
 
 struct ImageList {

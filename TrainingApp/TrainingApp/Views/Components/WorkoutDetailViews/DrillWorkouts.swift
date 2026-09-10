@@ -18,11 +18,11 @@ struct DrillList {
     ]
     
     static let coreStrengthWork: [SpecificList] = [
-        .init(vidName: "core", workoutName: "Around the Worlds", wkDescription: "Grab Kettle bell and rotate around your body.", isFaved: false),
+        .init(vidName: "core", workoutName: "Around the Worlds", wkDescription: "Grab Kettle bell and rotate around your body.", isFaved: false, vidName2: "core"),
     ]
-    
+
     static let explosivenessWork: [SpecificList] = [
-        .init(vidName: "explosiveness", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false)
+        .init(vidName: "explosiveness", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor to build reactive ankle stiffness.", isFaved: false, vidName2: "explosiveness")
     ]
     
     static let ladderWork: [SpecificList] = [
@@ -34,12 +34,12 @@ struct DrillList {
     ]
     
     static let lowerBodyWork: [SpecificList] = [
-        .init(vidName: "lowerBody", workoutName: "Front Squats", wkDescription: "Hold bar on shoulders and keep heels on ground.", isFaved: false),
-        .init(vidName: "lowerBody", workoutName: "Heel elevated Goblet Squats", wkDescription: "Elevate heels off the ground with a plate and squat.", isFaved: false)
+        .init(vidName: "lowerBody", workoutName: "Front Squats", wkDescription: "Hold bar on shoulders and keep heels on ground.", isFaved: false, vidName2: "lowerBody"),
+        .init(vidName: "lowerBody", workoutName: "Heel elevated Goblet Squats", wkDescription: "Elevate heels off the ground with a plate and squat.", isFaved: false, vidName2: "lowerBody")
     ]
-    
+
     static let upperBodyWork: [SpecificList] = [
-        .init(vidName: "upperBody", workoutName: "Landmine Rotation", wkDescription: "Rotate standing press overhead side to side.", isFaved: false)
+        .init(vidName: "upperBody", workoutName: "Landmine Rotation", wkDescription: "Rotate standing press overhead side to side.", isFaved: false, vidName2: "upperBody")
     ]
 }
 
