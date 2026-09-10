@@ -77,13 +77,13 @@ struct LadderPattern: Hashable {
         }
     )
 
-    /// A weaving slalom up the ladder. In each box both feet step to their
-    /// own side of the interior, then both step back out — but the leading
-    /// foot and the side stepped out to alternate box to box, so the athlete
-    /// zigzags side to side as they climb the ladder.
-    static let typeWriter = LadderPattern(
-        squareCount: 6,
-        steps: stride(from: 5, through: 0, by: -1).enumerated().flatMap { box, squareIndex -> [LadderStep] in
+    /// A weaving slalom: in each box both feet step to their own side of the
+    /// interior, then both step back out — but the leading foot and the side
+    /// stepped out to alternate box to box, so the athlete zigzags side to
+    /// side as they move along the ladder. `squareIndices` gives the order
+    /// boxes are visited in, so the same shape can run either direction.
+    private static func slalomSteps(squareIndices: [Int]) -> [LadderStep] {
+        squareIndices.enumerated().flatMap { box, squareIndex -> [LadderStep] in
             let enteringFromLeft = box.isMultiple(of: 2)
             let leadFoot: FootSide = enteringFromLeft ? .right : .left
             let trailFoot: FootSide = enteringFromLeft ? .left : .right
@@ -104,5 +104,18 @@ struct LadderPattern: Hashable {
                 LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(trailFoot, xOffset: trailOutXOffset)], action: label(trailFoot, "Out"))
             ]
         }
+    }
+
+    /// Bottom-to-top, per the drill's usual direction convention.
+    static let typeWriter = LadderPattern(
+        squareCount: 6,
+        steps: slalomSteps(squareIndices: Array(stride(from: 5, through: 0, by: -1)))
+    )
+
+    /// The same weaving slalom as TypeWriter, but run top-to-bottom — as if
+    /// the athlete is moving through the ladder backwards.
+    static let backwardsTypeWriter = LadderPattern(
+        squareCount: 6,
+        steps: slalomSteps(squareIndices: Array(0...5))
     )
 }

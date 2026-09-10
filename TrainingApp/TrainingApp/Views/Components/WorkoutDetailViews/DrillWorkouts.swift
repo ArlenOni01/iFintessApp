@@ -29,7 +29,7 @@ struct DrillList {
         .init(vidName: "ladders", workoutName: "One Foot", wkDescription: "One foot in each hole on a sprint.", isFaved: false, ladderPattern: .oneFoot),
         .init(vidName: "ladders", workoutName: "Two Foot", wkDescription: "Right foot, then left foot, in each hole — a double-time run.", isFaved: false, ladderPattern: .twoFoot),
         .init(vidName: "ladders", workoutName: "TypeWriter", wkDescription: "Step in, then out, weaving side to side up the ladder.", isFaved: false, ladderPattern: .typeWriter),
-        .init(vidName: "ladders", workoutName: "Reverse Typewriter", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false),
+        .init(vidName: "ladders", workoutName: "Backwards Typewriter", wkDescription: "The same weave, top to bottom, as if running it backwards.", isFaved: false, ladderPattern: .backwardsTypeWriter),
         .init(vidName: "ladders", workoutName: "Scissors", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false)
     ]
     
