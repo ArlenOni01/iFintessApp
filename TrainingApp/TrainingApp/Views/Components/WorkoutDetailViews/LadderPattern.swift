@@ -14,10 +14,18 @@ struct LadderFootPlacement: Hashable {
     /// center: 0 = centered, -0.5 = left edge, 0.5 = right edge. Drills that
     /// place a foot outside the ladder (e.g. Scissors) can go past ±0.5.
     let xOffset: CGFloat
+    /// Offset along the ladder's length, as a fraction of a square's height
+    /// from center: 0 = centered, -0.5 = toward the top, 0.5 = toward the
+    /// bottom. Used instead of `xOffset` to separate two feet that are
+    /// side by side across the ladder's width (e.g. a sideways stance),
+    /// since staggering them left-right there would put one foot back
+    /// inside the ladder or the other further out than intended.
+    let yOffset: CGFloat
 
-    init(_ foot: FootSide, xOffset: CGFloat = 0) {
+    init(_ foot: FootSide, xOffset: CGFloat = 0, yOffset: CGFloat = 0) {
         self.foot = foot
         self.xOffset = xOffset
+        self.yOffset = yOffset
     }
 }
 
@@ -37,6 +45,11 @@ struct LadderStep: Hashable {
 struct LadderPattern: Hashable {
     let squareCount: Int
     let steps: [LadderStep]
+    /// True for drills where the athlete faces sideways (perpendicular to
+    /// the ladder) rather than running through it — so the foot markers
+    /// should be drawn rotated 90°, pointing across the ladder instead of
+    /// up/down it.
+    var sidewaysStance: Bool = false
 
     /// One foot per square, alternating left/right up the ladder from the
     /// bottom. Each foot lands slightly toward its own side of the square
@@ -117,5 +130,32 @@ struct LadderPattern: Hashable {
     static let backwardsTypeWriter = LadderPattern(
         squareCount: 6,
         steps: slalomSteps(squareIndices: Array(0...5))
+    )
+
+    /// Facing sideways, sliding down the length of the ladder: both feet
+    /// start outside on the right. Right foot leads in, left foot follows in
+    /// beside it; then right foot leads back out to the right, left foot
+    /// follows out next to it — before shifting to the next square. Right
+    /// stays the lead foot the whole way down; the athlete's body never
+    /// leaves the right side of the ladder, so — unlike TypeWriter's
+    /// box-to-box crossover — no placement here reaches past the box's own
+    /// center, just a short in/out shuffle.
+    ///
+    /// Because the feet are drawn rotated (pointing across the ladder, not
+    /// up/down it), the two feet are kept apart along the ladder's length
+    /// instead of across its width — right toward the top, left toward the
+    /// bottom — the same formation TypeWriter uses, just turned 90° to
+    /// match the rotated feet.
+    static let scissors = LadderPattern(
+        squareCount: 6,
+        steps: stride(from: 5, through: 0, by: -1).flatMap { squareIndex in
+            [
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(.right, xOffset: 0.1, yOffset: -0.22)], action: "Right In"),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(.left, xOffset: 0.1, yOffset: 0.22)], action: "Left In"),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(.right, xOffset: 0.9, yOffset: -0.22)], action: "Right Out"),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(.left, xOffset: 0.9, yOffset: 0.22)], action: "Left Out")
+            ]
+        },
+        sidewaysStance: true
     )
 }

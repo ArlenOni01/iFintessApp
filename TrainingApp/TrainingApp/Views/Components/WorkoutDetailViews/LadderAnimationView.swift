@@ -70,9 +70,10 @@ struct LadderAnimationView: View {
                             Ellipse()
                                 .fill(accentColor.opacity(isActive ? 1 : 0.35))
                                 .frame(width: laneWidth * 0.3, height: squareHeight * 0.72)
+                                .rotationEffect(.degrees(pattern.sidewaysStance ? 90 : 0))
                                 .position(
                                     x: railInset + laneWidth * (0.5 + placement.xOffset),
-                                    y: (CGFloat(step.squareIndex) + 0.5) * squareHeight
+                                    y: (CGFloat(step.squareIndex) + 0.5 + placement.yOffset) * squareHeight
                                 )
                                 .animation(.easeInOut(duration: stepDuration), value: stepIndex)
                         }
