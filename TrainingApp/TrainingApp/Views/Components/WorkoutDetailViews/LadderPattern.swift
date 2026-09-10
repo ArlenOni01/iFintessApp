@@ -76,4 +76,33 @@ struct LadderPattern: Hashable {
             ]
         }
     )
+
+    /// A weaving slalom up the ladder. In each box both feet step to their
+    /// own side of the interior, then both step back out — but the leading
+    /// foot and the side stepped out to alternate box to box, so the athlete
+    /// zigzags side to side as they climb the ladder.
+    static let typeWriter = LadderPattern(
+        squareCount: 6,
+        steps: stride(from: 5, through: 0, by: -1).enumerated().flatMap { box, squareIndex -> [LadderStep] in
+            let enteringFromLeft = box.isMultiple(of: 2)
+            let leadFoot: FootSide = enteringFromLeft ? .right : .left
+            let trailFoot: FootSide = enteringFromLeft ? .left : .right
+            let sign: CGFloat = enteringFromLeft ? 1 : -1
+            // The lead foot steps out a little wider than the trailing foot,
+            // so once both are outside the ladder they land side by side
+            // rather than stacked on the exact same spot.
+            let leadOutXOffset = sign * 1.05
+            let trailOutXOffset = sign * 0.75
+
+            func inXOffset(_ foot: FootSide) -> CGFloat { foot == .right ? 0.22 : -0.22 }
+            func label(_ foot: FootSide, _ verb: String) -> String { "\(foot == .right ? "Right" : "Left") \(verb)" }
+
+            return [
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(leadFoot, xOffset: inXOffset(leadFoot))], action: label(leadFoot, "In")),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(trailFoot, xOffset: inXOffset(trailFoot))], action: label(trailFoot, "In")),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(leadFoot, xOffset: leadOutXOffset)], action: label(leadFoot, "Out")),
+                LadderStep(squareIndex: squareIndex, placements: [LadderFootPlacement(trailFoot, xOffset: trailOutXOffset)], action: label(trailFoot, "Out"))
+            ]
+        }
+    )
 }
