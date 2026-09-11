@@ -9,14 +9,14 @@ import SwiftUI
 
 struct WorkoutList {
     static let ankleWork: [SpecificList] = [
-        .init(vidName: "ankle", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false, vidName2: "ankle"),
-        .init(vidName: "ankle", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "ankle"),
-        .init(vidName: "ankle", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false, vidName2: "ankle")
+        .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false, vidName2: "ankle_flexion_finish"),
+        .init(vidName: "heel_lifts_start", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "ankle"),
+        .init(vidName: "ankle", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false, vidName2: "ankle_rotation_finish")
 
     ]
 
     static let calisthenicWork: [SpecificList] = [
-        .init(vidName: "calisthenics", workoutName: "Pull Ups", wkDescription: "Just pull up on the bar.", isFaved: false, vidName2: "calisthenics")
+        .init(vidName: "pullup_start", workoutName: "Pull Ups", wkDescription: "Just pull up on the bar.", isFaved: false, vidName2: "pullup_finish")
     ]
 
     static let hipWork: [SpecificList] = [
@@ -32,7 +32,7 @@ struct WorkoutList {
     ]
 
     static let shoulderWork: [SpecificList] = [
-        .init(vidName: "shoulders", workoutName: "Shoulder Cuff rotations", wkDescription: "Rotate the arm through its full range to mobilize the rotator cuff.", isFaved: false, vidName2: "shoulders")
+        .init(vidName: "shoulder_cuff_rotation_start", workoutName: "Shoulder Cuff rotations", wkDescription: "Rotate the arm through its full range to mobilize the rotator cuff.", isFaved: false, vidName2: "shoulder_cuff_rotation_finish")
     ]
 
     static let wristWork: [SpecificList] = [

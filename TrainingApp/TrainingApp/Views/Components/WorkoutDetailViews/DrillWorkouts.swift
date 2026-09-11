@@ -18,11 +18,11 @@ struct DrillList {
     ]
     
     static let coreStrengthWork: [SpecificList] = [
-        .init(vidName: "core", workoutName: "Around the Worlds", wkDescription: "Grab Kettle bell and rotate around your body.", isFaved: false, vidName2: "core"),
+        .init(vidName: "around_the_world_start", workoutName: "Around the Worlds", wkDescription: "Grab Kettle bell and rotate around your body.", isFaved: false, vidName2: "around_the_world_finish"),
     ]
 
     static let explosivenessWork: [SpecificList] = [
-        .init(vidName: "explosiveness", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor to build reactive ankle stiffness.", isFaved: false, vidName2: "explosiveness")
+        .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor to build reactive ankle stiffness.", isFaved: false, vidName2: "ankle_flexion_finish")
     ]
     
     static let ladderWork: [SpecificList] = [
@@ -34,12 +34,12 @@ struct DrillList {
     ]
     
     static let lowerBodyWork: [SpecificList] = [
-        .init(vidName: "lowerBody", workoutName: "Front Squats", wkDescription: "Hold bar on shoulders and keep heels on ground.", isFaved: false, vidName2: "lowerBody"),
-        .init(vidName: "lowerBody", workoutName: "Heel elevated Goblet Squats", wkDescription: "Elevate heels off the ground with a plate and squat.", isFaved: false, vidName2: "lowerBody")
+        .init(vidName: "front_squat_start", workoutName: "Front Squats", wkDescription: "Hold bar on shoulders and keep heels on ground.", isFaved: false, vidName2: "front_squat_finish"),
+        .init(vidName: "heel_elevated_goblet_squats_start", workoutName: "Heel elevated Goblet Squats", wkDescription: "Elevate heels off the ground with a plate and squat.", isFaved: false, vidName2: "heel_elevated_goblet_squats_finish")
     ]
 
     static let upperBodyWork: [SpecificList] = [
-        .init(vidName: "upperBody", workoutName: "Landmine Rotation", wkDescription: "Rotate standing press overhead side to side.", isFaved: false, vidName2: "upperBody")
+        .init(vidName: "landmine_press_start", workoutName: "Landmine Rotation", wkDescription: "Rotate standing press overhead side to side.", isFaved: false, vidName2: "landmine_press_finish")
     ]
 }
 
