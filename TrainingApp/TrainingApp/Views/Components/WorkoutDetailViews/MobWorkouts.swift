@@ -12,36 +12,36 @@ struct WorkoutList {
         .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false, vidName2: "ankle_flexion_finish"),
         .init(vidName: "heel_lifts_start", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "ankle"),
         .init(vidName: "ankle", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false, vidName2: "ankle_rotation_finish"),
-        .init(vidName: "ankle", workoutName: "Standing Calf Wall Stretch", wkDescription: "Step one foot back and lean into the wall with your back heel pressed flat to stretch the calf and ankle.", isFaved: false, vidName2: "ankle"),
-        .init(vidName: "ankle", workoutName: "Banded Ankle Dorsiflexion", wkDescription: "Loop a resistance band around your foot and pull your toes up toward your shin, then release.", isFaved: false, vidName2: "ankle")
+        .init(vidName: "wall_stretch_start", workoutName: "Standing Calf Wall Stretch", wkDescription: "Step one foot back and lean into the wall with your back heel pressed flat to stretch the calf and ankle.", isFaved: false, vidName2: "wall_stretch_finish"),
+        .init(vidName: "banded_dorsiflexion", workoutName: "Banded Ankle Dorsiflexion", wkDescription: "Loop a resistance band around your foot and pull your toes up toward your shin, then release.", isFaved: false, vidName2: "ankle")
     ]
 
     static let calisthenicWork: [SpecificList] = [
         .init(vidName: "pullup_start", workoutName: "Pull Ups", wkDescription: "Just pull up on the bar.", isFaved: false, vidName2: "pullup_finish"),
-        .init(vidName: "calisthenics", workoutName: "Push-Ups", wkDescription: "Lower your chest to the floor keeping your body in a straight line, then press back up.", isFaved: false, vidName2: "calisthenics"),
-        .init(vidName: "calisthenics", workoutName: "Bodyweight Squats", wkDescription: "Send your hips back and down until your thighs are parallel to the floor, then stand back up.", isFaved: false, vidName2: "calisthenics"),
-        .init(vidName: "calisthenics", workoutName: "Triceps Dips", wkDescription: "Lower your body between two parallel bars by bending your elbows, then press back up.", isFaved: false, vidName2: "calisthenics")
+        .init(vidName: "push_up_start", workoutName: "Push-Ups", wkDescription: "Lower your chest to the floor keeping your body in a straight line, then press back up.", isFaved: false, vidName2: "push_up_finish"),
+        .init(vidName: "bodyweight_squat_start", workoutName: "Bodyweight Squats", wkDescription: "Send your hips back and down until your thighs are parallel to the floor, then stand back up.", isFaved: false, vidName2: "bodyweight_squat_finish"),
+        .init(vidName: "tricep_dips_start", workoutName: "Triceps Dips", wkDescription: "Lower your body between two parallel bars by bending your elbows, then press back up.", isFaved: false, vidName2: "tricep_dips_finish")
     ]
 
     static let hipWork: [SpecificList] = [
         .init(vidName: "hips", workoutName: "Hip Abduction", wkDescription: "Use the machine.", isFaved: false, vidName2: "hips"),
-        .init(vidName: "hips", workoutName: "Glute Bridge", wkDescription: "Lie on your back with knees bent and drive your hips up toward the ceiling, squeezing your glutes.", isFaved: false, vidName2: "hips"),
-        .init(vidName: "hips", workoutName: "Clamshell", wkDescription: "Lying on your side with knees bent, open your top knee like a clamshell while keeping your feet together.", isFaved: false, vidName2: "hips"),
-        .init(vidName: "hips", workoutName: "90/90 Hip Switch", wkDescription: "Sit with both legs bent at 90 degrees, one in front and one to the side, then rotate to switch sides.", isFaved: false, vidName2: "hips")
+        .init(vidName: "glute_bridge_start", workoutName: "Glute Bridge", wkDescription: "Lie on your back with knees bent and drive your hips up toward the ceiling, squeezing your glutes.", isFaved: false, vidName2: "glute_bridge_finish"),
+        .init(vidName: "clamshell_start", workoutName: "Clamshell", wkDescription: "Lying on your side with knees bent, open your top knee like a clamshell while keeping your feet together.", isFaved: false, vidName2: "clamshell_finish"),
+        .init(vidName: "hip_9090", workoutName: "90/90 Hip Switch", wkDescription: "Sit with both legs bent at 90 degrees, one in front and one to the side, then rotate to switch sides.", isFaved: false, vidName2: "hips")
     ]
 
     static let kneeWork: [SpecificList] = [
         .init(vidName: "knee", workoutName: "Cycling", wkDescription: "Lie back and pedal an imaginary bike to mobilize the knees.", isFaved: false, vidName2: "knee"),
-        .init(vidName: "knee", workoutName: "Heel Slides", wkDescription: "Lying on your back, slide one heel toward your glutes then slide it back out straight.", isFaved: false, vidName2: "knee"),
-        .init(vidName: "knee", workoutName: "Straight Leg Raise", wkDescription: "Sit tall and extend one leg straight, then lift it a few inches off the ground.", isFaved: false, vidName2: "knee"),
-        .init(vidName: "knee", workoutName: "Wall Sit", wkDescription: "Slide your back down a wall until your knees are bent at 90 degrees and hold.", isFaved: false, vidName2: "knee")
+        .init(vidName: "heel_slide_start", workoutName: "Heel Slides", wkDescription: "Lying on your back, slide one heel toward your glutes then slide it back out straight.", isFaved: false, vidName2: "heel_slide_finish"),
+        .init(vidName: "straight_leg_raise_start", workoutName: "Straight Leg Raise", wkDescription: "Sit tall and extend one leg straight, then lift it a few inches off the ground.", isFaved: false, vidName2: "straight_leg_raise_finish"),
+        .init(vidName: "wall_sit_start", workoutName: "Wall Sit", wkDescription: "Slide your back down a wall until your knees are bent at 90 degrees and hold.", isFaved: false, vidName2: "wall_sit_finish")
     ]
 
     static let lowerLegWork: [SpecificList] = [
-        .init(vidName: "lowerLeg", workoutName: "Single Legged Hops", wkDescription: "Hop in place on one leg to build lower leg control.", isFaved: false, vidName2: "lowerLeg"),
-        .init(vidName: "lowerLeg", workoutName: "Standing Calf Raise", wkDescription: "Rise up onto the balls of your feet as high as you can, then lower back down.", isFaved: false, vidName2: "lowerLeg"),
+        .init(vidName: "single_legged_hop_start", workoutName: "Single Legged Hops", wkDescription: "Hop in place on one leg to build lower leg control.", isFaved: false, vidName2: "single_legged_hop_finish"),
+        .init(vidName: "calf_raise_start", workoutName: "Standing Calf Raise", wkDescription: "Rise up onto the balls of your feet as high as you can, then lower back down.", isFaved: false, vidName2: "calf_raise_finish"),
         .init(vidName: "lowerLeg", workoutName: "Lunging Calf Stretch", wkDescription: "Step one foot back into a lunge, keeping the back heel pressed down to stretch the calf.", isFaved: false, vidName2: "lowerLeg"),
-        .init(vidName: "lowerLeg", workoutName: "Eccentric Heel Drop", wkDescription: "Stand on the edge of a step on the balls of your feet and slowly lower your heels below the step.", isFaved: false, vidName2: "lowerLeg")
+        .init(vidName: "heel_drop_start", workoutName: "Eccentric Heel Drop", wkDescription: "Stand on the edge of a step on the balls of your feet and slowly lower your heels below the step.", isFaved: false, vidName2: "heel_drop_finish")
     ]
 
     static let shoulderWork: [SpecificList] = [
@@ -59,7 +59,7 @@ struct WorkoutList {
     ]
 
     static let yogaWork: [SpecificList] = [
-        .init(vidName: "yoga", workoutName: "Downward Dog", wkDescription: "Form an inverted V, pressing heels toward the floor.", isFaved: false, vidName2: "yoga"),
+        .init(vidName: "downward_dog_start", workoutName: "Downward Dog", wkDescription: "Form an inverted V, pressing heels toward the floor.", isFaved: false, vidName2: "downward_dog_finish"),
         .init(vidName: "yoga", workoutName: "Cat-Cow", wkDescription: "On hands and knees, arch your back and drop your belly (cow), then round your spine and tuck your chin (cat).", isFaved: false, vidName2: "yoga"),
         .init(vidName: "yoga", workoutName: "Child's Pose", wkDescription: "Kneel and sit back onto your heels, then fold forward with arms extended in front of you.", isFaved: false, vidName2: "yoga"),
         .init(vidName: "yoga", workoutName: "Low Lunge", wkDescription: "Step one foot forward into a deep lunge and reach your arms overhead to open the hips.", isFaved: false, vidName2: "yoga")
