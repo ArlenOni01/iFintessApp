@@ -40,7 +40,7 @@ struct ImageList {
     
     static let mobilityImages: [FullWorkList] = [
         .init(imageName: "ankle", title: "Ankle", description: "Best ways to reduce shock absorbed elsewhere in the body."),
-        .init(imageName: "calisthenics", title: "Calisthenics", description: "Improve your overall balance, posture, and felxibility."),
+        .init(imageName: "calisthenics", title: "Calisthenics", description: "Improve your overall balance, posture, and flexibility."),
         .init(imageName: "hips", title: "Hip", description: "Best ways to improve athletic performance and decrease lower back pain."),
         .init(imageName: "knee", title: "Knee", description: "Extend your longevity for daily living activities in these ways."),
         .init(imageName: "lowerLeg", title: "Lower Leg", description: "Improve your ability to stand, move, and keep balance."),

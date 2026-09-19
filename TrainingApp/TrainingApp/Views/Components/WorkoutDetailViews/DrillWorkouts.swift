@@ -25,7 +25,6 @@ struct DrillList {
     ]
 
     static let explosivenessWork: [SpecificList] = [
-        .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor to build reactive ankle stiffness.", isFaved: false, vidName2: "ankle_flexion_finish"),
         .init(vidName: "explosiveness", workoutName: "Box Jump", wkDescription: "Dip into a quarter squat and jump explosively onto a raised box, landing softly with bent knees.", isFaved: false, vidName2: "explosiveness"),
         .init(vidName: "explosiveness", workoutName: "Jump Squat", wkDescription: "Drop into a squat and explode upward into a jump, landing softly back into the squat.", isFaved: false, vidName2: "explosiveness"),
         .init(vidName: "explosiveness", workoutName: "Medicine Ball Slam", wkDescription: "Raise a medicine ball overhead and slam it into the ground as hard as possible.", isFaved: false, vidName2: "explosiveness")

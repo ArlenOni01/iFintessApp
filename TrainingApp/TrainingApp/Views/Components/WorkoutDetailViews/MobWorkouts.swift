@@ -11,9 +11,9 @@ struct WorkoutList {
     static let ankleWork: [SpecificList] = [
         .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false, vidName2: "ankle_flexion_finish"),
         .init(vidName: "heel_lifts_start", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "ankle"),
-        .init(vidName: "ankle", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false, vidName2: "ankle_rotation_finish"),
+        .init(vidName: "ankle_rotation_finish", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false),
         .init(vidName: "wall_stretch_start", workoutName: "Standing Calf Wall Stretch", wkDescription: "Step one foot back and lean into the wall with your back heel pressed flat to stretch the calf and ankle.", isFaved: false, vidName2: "wall_stretch_finish"),
-        .init(vidName: "banded_dorsiflexion", workoutName: "Banded Ankle Dorsiflexion", wkDescription: "Loop a resistance band around your foot and pull your toes up toward your shin, then release.", isFaved: false, vidName2: "ankle")
+        .init(vidName: "banded_dorsiflexion", workoutName: "Banded Ankle Dorsiflexion", wkDescription: "Loop a resistance band around your foot and pull your toes up toward your shin, then release.", isFaved: false)
     ]
 
     static let calisthenicWork: [SpecificList] = [
@@ -24,7 +24,6 @@ struct WorkoutList {
     ]
 
     static let hipWork: [SpecificList] = [
-        .init(vidName: "hips", workoutName: "Hip Abduction", wkDescription: "Use the machine.", isFaved: false, vidName2: "hips"),
         .init(vidName: "glute_bridge_start", workoutName: "Glute Bridge", wkDescription: "Lie on your back with knees bent and drive your hips up toward the ceiling, squeezing your glutes.", isFaved: false, vidName2: "glute_bridge_finish"),
         .init(vidName: "clamshell_start", workoutName: "Clamshell", wkDescription: "Lying on your side with knees bent, open your top knee like a clamshell while keeping your feet together.", isFaved: false, vidName2: "clamshell_finish"),
         .init(vidName: "hip_9090", workoutName: "90/90 Hip Switch", wkDescription: "Sit with both legs bent at 90 degrees, one in front and one to the side, then rotate to switch sides.", isFaved: false, vidName2: "hips")
@@ -40,7 +39,6 @@ struct WorkoutList {
     static let lowerLegWork: [SpecificList] = [
         .init(vidName: "single_legged_hop_start", workoutName: "Single Legged Hops", wkDescription: "Hop in place on one leg to build lower leg control.", isFaved: false, vidName2: "single_legged_hop_finish"),
         .init(vidName: "calf_raise_start", workoutName: "Standing Calf Raise", wkDescription: "Rise up onto the balls of your feet as high as you can, then lower back down.", isFaved: false, vidName2: "calf_raise_finish"),
-        .init(vidName: "lowerLeg", workoutName: "Lunging Calf Stretch", wkDescription: "Step one foot back into a lunge, keeping the back heel pressed down to stretch the calf.", isFaved: false, vidName2: "lowerLeg"),
         .init(vidName: "heel_drop_start", workoutName: "Eccentric Heel Drop", wkDescription: "Stand on the edge of a step on the balls of your feet and slowly lower your heels below the step.", isFaved: false, vidName2: "heel_drop_finish")
     ]
 
