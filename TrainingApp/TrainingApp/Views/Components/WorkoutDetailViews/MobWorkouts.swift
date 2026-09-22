@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkoutList {
     static let ankleWork: [SpecificList] = [
         .init(vidName: "ankle_flexion_start", workoutName: "Ankle Flexion", wkDescription: "Kneel down and press ankle humps into the floor.", isFaved: false, vidName2: "ankle_flexion_finish"),
-        .init(vidName: "heel_lifts_start", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "ankle"),
+        .init(vidName: "heel_lifts_start", workoutName: "Heel lifts", wkDescription: "Keep heels on ground and lift up toes towards the ceiling.", isFaved: false, vidName2: "heel_lifts_finish"),
         .init(vidName: "ankle_rotation_finish", workoutName: "Ankle Rotations", wkDescription: "Lift knee to 90 degrees and and rotate clockwise and counter-clockwise with ankles pointing down and twisting upwards.", isFaved: false),
         .init(vidName: "wall_stretch_start", workoutName: "Standing Calf Wall Stretch", wkDescription: "Step one foot back and lean into the wall with your back heel pressed flat to stretch the calf and ankle.", isFaved: false, vidName2: "wall_stretch_finish"),
         .init(vidName: "banded_dorsiflexion", workoutName: "Banded Ankle Dorsiflexion", wkDescription: "Loop a resistance band around your foot and pull your toes up toward your shin, then release.", isFaved: false)
@@ -30,7 +30,7 @@ struct WorkoutList {
     ]
 
     static let kneeWork: [SpecificList] = [
-        .init(vidName: "knee", workoutName: "Cycling", wkDescription: "Lie back and pedal an imaginary bike to mobilize the knees.", isFaved: false, vidName2: "knee"),
+        .init(vidName: "cycling", workoutName: "Cycling", wkDescription: "Lie back and pedal an imaginary bike to mobilize the knees.", isFaved: false),
         .init(vidName: "heel_slide_start", workoutName: "Heel Slides", wkDescription: "Lying on your back, slide one heel toward your glutes then slide it back out straight.", isFaved: false, vidName2: "heel_slide_finish"),
         .init(vidName: "straight_leg_raise_start", workoutName: "Straight Leg Raise", wkDescription: "Sit tall and extend one leg straight, then lift it a few inches off the ground.", isFaved: false, vidName2: "straight_leg_raise_finish"),
         .init(vidName: "wall_sit_start", workoutName: "Wall Sit", wkDescription: "Slide your back down a wall until your knees are bent at 90 degrees and hold.", isFaved: false, vidName2: "wall_sit_finish")
@@ -44,22 +44,22 @@ struct WorkoutList {
 
     static let shoulderWork: [SpecificList] = [
         .init(vidName: "shoulder_cuff_rotation_start", workoutName: "Shoulder Cuff rotations", wkDescription: "Rotate the arm through its full range to mobilize the rotator cuff.", isFaved: false, vidName2: "shoulder_cuff_rotation_finish"),
-        .init(vidName: "shoulders", workoutName: "Band Pass-Through", wkDescription: "Holding a resistance band with a wide grip, raise it overhead and pass it behind your back, then bring it back to the front.", isFaved: false, vidName2: "shoulders"),
-        .init(vidName: "shoulders", workoutName: "Wall Slide Y-Raise", wkDescription: "With your back against a wall, slide your arms up into a Y shape, keeping elbows and wrists touching the wall.", isFaved: false, vidName2: "shoulders"),
+        .init(vidName: "band_pass_through_start", workoutName: "Band Pass-Through", wkDescription: "Holding a resistance band with a wide grip, raise it overhead and pass it behind your back, then bring it back to the front.", isFaved: false, vidName2: "band_pass_through_finish"),
+        .init(vidName: "wall_slide_y_raise_start", workoutName: "Wall Slide Y-Raise", wkDescription: "With your back against a wall, slide your arms up into a Y shape, keeping elbows and wrists touching the wall.", isFaved: false, vidName2: "wall_slide_y_raise_finish"),
         .init(vidName: "shoulders", workoutName: "Doorway Shoulder Stretch", wkDescription: "Place your forearm on a doorframe and gently lean forward to stretch the front of the shoulder.", isFaved: false, vidName2: "shoulders")
     ]
 
     static let wristWork: [SpecificList] = [
-        .init(vidName: "wrist", workoutName: "Wrist Flexion", wkDescription: "Bend the wrist forward and back through its full range.", isFaved: false, vidName2: "wrist"),
-        .init(vidName: "wrist", workoutName: "Wrist Extension", wkDescription: "Extend your arm and gently pull your fingers back toward you with the opposite hand.", isFaved: false, vidName2: "wrist"),
-        .init(vidName: "wrist", workoutName: "Prayer Stretch", wkDescription: "Press your palms together in front of your chest, then lower your hands toward your waist keeping palms together.", isFaved: false, vidName2: "wrist"),
+        .init(vidName: "wrist_flexion_start", workoutName: "Wrist Flexion", wkDescription: "Bend the wrist forward and back through its full range.", isFaved: false, vidName2: "wrist_flexion_finish"),
+        .init(vidName: "wrist_extension_start", workoutName: "Wrist Extension", wkDescription: "Extend your arm and gently pull your fingers back toward you with the opposite hand.", isFaved: false, vidName2: "wrist_extension_finish"),
+        .init(vidName: "prayer_stretch_start", workoutName: "Prayer Stretch", wkDescription: "Press your palms together in front of your chest, then lower your hands toward your waist keeping palms together.", isFaved: false, vidName2: "prayer_stretch_finish"),
         .init(vidName: "wrist", workoutName: "Wall Wrist Walk", wkDescription: "Place your hands on a wall with fingers pointing up and walk them down as far as you can, then walk them back up.", isFaved: false, vidName2: "wrist")
     ]
 
     static let yogaWork: [SpecificList] = [
         .init(vidName: "downward_dog_start", workoutName: "Downward Dog", wkDescription: "Form an inverted V, pressing heels toward the floor.", isFaved: false, vidName2: "downward_dog_finish"),
-        .init(vidName: "yoga", workoutName: "Cat-Cow", wkDescription: "On hands and knees, arch your back and drop your belly (cow), then round your spine and tuck your chin (cat).", isFaved: false, vidName2: "yoga"),
-        .init(vidName: "yoga", workoutName: "Child's Pose", wkDescription: "Kneel and sit back onto your heels, then fold forward with arms extended in front of you.", isFaved: false, vidName2: "yoga"),
-        .init(vidName: "yoga", workoutName: "Low Lunge", wkDescription: "Step one foot forward into a deep lunge and reach your arms overhead to open the hips.", isFaved: false, vidName2: "yoga")
+        .init(vidName: "cat_cow_start", workoutName: "Cat-Cow", wkDescription: "On hands and knees, arch your back and drop your belly (cow), then round your spine and tuck your chin (cat).", isFaved: false, vidName2: "cat_cow_finish"),
+        .init(vidName: "childs_pose_start", workoutName: "Child's Pose", wkDescription: "Kneel and sit back onto your heels, then fold forward with arms extended in front of you.", isFaved: false, vidName2: "childs_pose_finish"),
+        .init(vidName: "low_lunge_start", workoutName: "Low Lunge", wkDescription: "Step one foot forward into a deep lunge and reach your arms overhead to open the hips.", isFaved: false, vidName2: "low_lunge_finish")
     ]
 }
