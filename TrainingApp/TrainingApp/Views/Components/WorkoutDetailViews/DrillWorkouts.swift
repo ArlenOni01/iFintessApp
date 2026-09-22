@@ -48,8 +48,8 @@ struct DrillList {
     static let upperBodyWork: [SpecificList] = [
         .init(vidName: "landmine_press_start", workoutName: "Landmine Rotation", wkDescription: "Rotate standing press overhead side to side.", isFaved: false, vidName2: "landmine_press_finish"),
         .init(vidName: "bench_press_start", workoutName: "Bench Press", wkDescription: "Lying on a bench, lower the barbell to your chest, then press it back up to full extension.", isFaved: false, vidName2: "bench_press_finish"),
-        .init(vidName: "upperBody", workoutName: "Lat Pulldown", wkDescription: "Grip the bar wide and pull it down to your chest, then let it rise back up with control.", isFaved: false, vidName2: "upperBody"),
-        .init(vidName: "upperBody", workoutName: "Overhead Press", wkDescription: "Press a barbell from your shoulders straight overhead until your arms are fully extended.", isFaved: false, vidName2: "upperBody")
+        .init(vidName: "lat_pulldown_start", workoutName: "Lat Pulldown", wkDescription: "Grip the bar wide and pull it down to your chest, then let it rise back up with control.", isFaved: false, vidName2: "lat_pulldown_finish"),
+        .init(vidName: "overhead_press", workoutName: "Overhead Press", wkDescription: "Press a barbell from your shoulders straight overhead until your arms are fully extended.", isFaved: false)
     ]
 }
 

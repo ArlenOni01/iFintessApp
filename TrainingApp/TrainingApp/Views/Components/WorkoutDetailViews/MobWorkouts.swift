@@ -26,7 +26,7 @@ struct WorkoutList {
     static let hipWork: [SpecificList] = [
         .init(vidName: "glute_bridge_start", workoutName: "Glute Bridge", wkDescription: "Lie on your back with knees bent and drive your hips up toward the ceiling, squeezing your glutes.", isFaved: false, vidName2: "glute_bridge_finish"),
         .init(vidName: "clamshell_start", workoutName: "Clamshell", wkDescription: "Lying on your side with knees bent, open your top knee like a clamshell while keeping your feet together.", isFaved: false, vidName2: "clamshell_finish"),
-        .init(vidName: "hip_9090", workoutName: "90/90 Hip Switch", wkDescription: "Sit with both legs bent at 90 degrees, one in front and one to the side, then rotate to switch sides.", isFaved: false, vidName2: "hips")
+        .init(vidName: "hip_9090", workoutName: "90/90 Hip Switch", wkDescription: "Sit with both legs bent at 90 degrees, one in front and one to the side, then rotate to switch sides.", isFaved: false, vidName2: "hip_9090_finish")
     ]
 
     static let kneeWork: [SpecificList] = [
@@ -45,15 +45,13 @@ struct WorkoutList {
     static let shoulderWork: [SpecificList] = [
         .init(vidName: "shoulder_cuff_rotation_start", workoutName: "Shoulder Cuff rotations", wkDescription: "Rotate the arm through its full range to mobilize the rotator cuff.", isFaved: false, vidName2: "shoulder_cuff_rotation_finish"),
         .init(vidName: "band_pass_through_start", workoutName: "Band Pass-Through", wkDescription: "Holding a resistance band with a wide grip, raise it overhead and pass it behind your back, then bring it back to the front.", isFaved: false, vidName2: "band_pass_through_finish"),
-        .init(vidName: "wall_slide_y_raise_start", workoutName: "Wall Slide Y-Raise", wkDescription: "With your back against a wall, slide your arms up into a Y shape, keeping elbows and wrists touching the wall.", isFaved: false, vidName2: "wall_slide_y_raise_finish"),
-        .init(vidName: "shoulders", workoutName: "Doorway Shoulder Stretch", wkDescription: "Place your forearm on a doorframe and gently lean forward to stretch the front of the shoulder.", isFaved: false, vidName2: "shoulders")
+        .init(vidName: "wall_slide_y_raise_start", workoutName: "Wall Slide Y-Raise", wkDescription: "With your back against a wall, slide your arms up into a Y shape, keeping elbows and wrists touching the wall.", isFaved: false, vidName2: "wall_slide_y_raise_finish")
     ]
 
     static let wristWork: [SpecificList] = [
         .init(vidName: "wrist_flexion_start", workoutName: "Wrist Flexion", wkDescription: "Bend the wrist forward and back through its full range.", isFaved: false, vidName2: "wrist_flexion_finish"),
         .init(vidName: "wrist_extension_start", workoutName: "Wrist Extension", wkDescription: "Extend your arm and gently pull your fingers back toward you with the opposite hand.", isFaved: false, vidName2: "wrist_extension_finish"),
-        .init(vidName: "prayer_stretch_start", workoutName: "Prayer Stretch", wkDescription: "Press your palms together in front of your chest, then lower your hands toward your waist keeping palms together.", isFaved: false, vidName2: "prayer_stretch_finish"),
-        .init(vidName: "wrist", workoutName: "Wall Wrist Walk", wkDescription: "Place your hands on a wall with fingers pointing up and walk them down as far as you can, then walk them back up.", isFaved: false, vidName2: "wrist")
+        .init(vidName: "prayer_stretch_start", workoutName: "Prayer Stretch", wkDescription: "Press your palms together in front of your chest, then lower your hands toward your waist keeping palms together.", isFaved: false, vidName2: "prayer_stretch_finish")
     ]
 
     static let yogaWork: [SpecificList] = [
