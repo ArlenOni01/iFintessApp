@@ -51,20 +51,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC1324D82CA19C900014185A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC1324C72CA19C8E0014185A;
-			remoteInfo = Phesian;
-		};
-		DC1324E22CA19C900014185A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC1324C72CA19C8E0014185A;
-			remoteInfo = Phesian;
-		};
 		DCC8EA08304F2EB20036250C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCA8BBDD2AF04892004B1D6C /* Project object */;
@@ -109,9 +95,6 @@
 		BADDDFAC5173C17DE632181C /* DrillStimulus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillStimulus.swift; sourceTree = "<group>"; };
 		C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPattern.swift; sourceTree = "<group>"; };
 		CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDrillEngine.swift; sourceTree = "<group>"; };
-		DC1324C82CA19C8E0014185A /* Phesian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phesian.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC1324D72CA19C900014185A /* PhesianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhesianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC1324E12CA19C900014185A /* PhesianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhesianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1325012CB4C9E40014185A /* FullTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTimer.swift; sourceTree = "<group>"; };
 		DC3F22E02B315EEF00BE575B /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		DC3F22E62B43633800BE575B /* TrainingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrainingApp.entitlements; sourceTree = "<group>"; };
@@ -156,27 +139,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC1324C52CA19C8E0014185A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324D42CA19C900014185A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324DE2CA19C900014185A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DCA8BBE22AF04892004B1D6C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,9 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				DCA8BBE52AF04892004B1D6C /* Phesian.app */,
-				DC1324C82CA19C8E0014185A /* Phesian.app */,
-				DC1324D72CA19C900014185A /* PhesianTests.xctest */,
-				DC1324E12CA19C900014185A /* PhesianUITests.xctest */,
 				DCC8EA01304F2EB20036250C /* TrainingApp Watch App.app */,
 				DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */,
 				DCC8EA15304F2EB30036250C /* TrainingApp Watch App Watch AppTests.xctest */,
@@ -368,65 +327,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC1324C72CA19C8E0014185A /* Phesian */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC1324EF2CA19C900014185A /* Build configuration list for PBXNativeTarget "Phesian" */;
-			buildPhases = (
-				DC1324C42CA19C8E0014185A /* Sources */,
-				DC1324C52CA19C8E0014185A /* Frameworks */,
-				DC1324C62CA19C8E0014185A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Phesian;
-			packageProductDependencies = (
-			);
-			productName = Phesian;
-			productReference = DC1324C82CA19C8E0014185A /* Phesian.app */;
-			productType = "com.apple.product-type.application";
-		};
-		DC1324D62CA19C900014185A /* PhesianTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC1324F02CA19C900014185A /* Build configuration list for PBXNativeTarget "PhesianTests" */;
-			buildPhases = (
-				DC1324D32CA19C900014185A /* Sources */,
-				DC1324D42CA19C900014185A /* Frameworks */,
-				DC1324D52CA19C900014185A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC1324D92CA19C900014185A /* PBXTargetDependency */,
-			);
-			name = PhesianTests;
-			packageProductDependencies = (
-			);
-			productName = PhesianTests;
-			productReference = DC1324D72CA19C900014185A /* PhesianTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DC1324E02CA19C900014185A /* PhesianUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC1324F12CA19C900014185A /* Build configuration list for PBXNativeTarget "PhesianUITests" */;
-			buildPhases = (
-				DC1324DD2CA19C900014185A /* Sources */,
-				DC1324DE2CA19C900014185A /* Frameworks */,
-				DC1324DF2CA19C900014185A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC1324E32CA19C900014185A /* PBXTargetDependency */,
-			);
-			name = PhesianUITests;
-			packageProductDependencies = (
-			);
-			productName = PhesianUITests;
-			productReference = DC1324E12CA19C900014185A /* PhesianUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		DCA8BBE42AF04892004B1D6C /* TrainingApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCA8BBF32AF04893004B1D6C /* Build configuration list for PBXNativeTarget "TrainingApp" */;
@@ -542,17 +442,6 @@
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					DC1324C72CA19C8E0014185A = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					DC1324D62CA19C900014185A = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = DC1324C72CA19C8E0014185A;
-					};
-					DC1324E02CA19C900014185A = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = DC1324C72CA19C8E0014185A;
-					};
 					DCA8BBE42AF04892004B1D6C = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -586,9 +475,6 @@
 			projectRoot = "";
 			targets = (
 				DCA8BBE42AF04892004B1D6C /* TrainingApp */,
-				DC1324C72CA19C8E0014185A /* Phesian */,
-				DC1324D62CA19C900014185A /* PhesianTests */,
-				DC1324E02CA19C900014185A /* PhesianUITests */,
 				DCC8EA00304F2EB20036250C /* TrainingApp Watch App */,
 				DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */,
 				DCC8EA14304F2EB30036250C /* TrainingApp Watch App Watch AppTests */,
@@ -598,27 +484,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DC1324C62CA19C8E0014185A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324D52CA19C900014185A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324DF2CA19C900014185A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DCA8BBE32AF04892004B1D6C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,27 +546,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DC1324C42CA19C8E0014185A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324D32CA19C900014185A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC1324DD2CA19C900014185A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DCA8BBE12AF04892004B1D6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,16 +614,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DC1324D92CA19C900014185A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC1324C72CA19C8E0014185A /* Phesian */;
-			targetProxy = DC1324D82CA19C900014185A /* PBXContainerItemProxy */;
-		};
-		DC1324E32CA19C900014185A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC1324C72CA19C8E0014185A /* Phesian */;
-			targetProxy = DC1324E22CA19C900014185A /* PBXContainerItemProxy */;
-		};
 		DCC8EA09304F2EB20036250C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCC8EA05304F2EB20036250C /* TrainingApp Watch App Watch App */;
@@ -798,134 +632,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DC1324E92CA19C900014185A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Phesian/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.Phesian;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DC1324EA2CA19C900014185A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Phesian/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.Phesian;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DC1324EB2CA19C900014185A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.PhesianTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phesian.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Phesian";
-			};
-			name = Debug;
-		};
-		DC1324EC2CA19C900014185A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.PhesianTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Phesian.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Phesian";
-			};
-			name = Release;
-		};
-		DC1324ED2CA19C900014185A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.PhesianUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Phesian;
-			};
-			name = Debug;
-		};
-		DC1324EE2CA19C900014185A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.arlensapp.PhesianUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Phesian;
-			};
-			name = Release;
-		};
 		DCA8BBF12AF04893004B1D6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1288,33 +994,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC1324EF2CA19C900014185A /* Build configuration list for PBXNativeTarget "Phesian" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC1324E92CA19C900014185A /* Debug */,
-				DC1324EA2CA19C900014185A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC1324F02CA19C900014185A /* Build configuration list for PBXNativeTarget "PhesianTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC1324EB2CA19C900014185A /* Debug */,
-				DC1324EC2CA19C900014185A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC1324F12CA19C900014185A /* Build configuration list for PBXNativeTarget "PhesianUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC1324ED2CA19C900014185A /* Debug */,
-				DC1324EE2CA19C900014185A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DCA8BBE02AF04892004B1D6C /* Build configuration list for PBXProject "TrainingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
