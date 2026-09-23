@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		14BE50F8F291D4ADC66350BB /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
-		CFF8CEECAE10AFC465C90B49 /* LadderPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */; };
-		913A87BFC43AC3C741BA0132 /* LadderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */; };
-		F2C97649A4A505A130E98EAA /* FootworkPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */; };
-		739508D4B1FFF80B8A493703 /* FootworkAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */; };
+		189A9770EE0B2C8070453624 /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
+		44F26CB17DCAA00398803799 /* PhoneSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */; };
+		6B6EB5656E176334964FC01E /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
 		72A3CB054AD3EA553C5A2737 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
+		739508D4B1FFF80B8A493703 /* FootworkAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */; };
+		83E3A6F599E451F3E82906E7 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
+		913A87BFC43AC3C741BA0132 /* LadderAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */; };
+		A4B21C51228B910150ACD913 /* ReactionDrillModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D019F2FA46FEF009B6F25 /* ReactionDrillModels.swift */; };
 		B275E1B106C7B1E950DCB6BD /* ReactionDrillEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */; };
+		BD764D47E6A0BFA6916DB840 /* ReactionDrillEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */; };
+		CFF8CEECAE10AFC465C90B49 /* LadderPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */; };
+		D81214C00E6637962DEF5AE5 /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
 		DC1325022CB4C9F20014185A /* FullTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1325012CB4C9E40014185A /* FullTimer.swift */; };
 		DC3F22902B2E7AF800BE575B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC3F228F2B2E7AF800BE575B /* GoogleService-Info.plist */; };
 		DC3F22932B2E7D5B00BE575B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DC3F22922B2E7D5B00BE575B /* FirebaseAnalytics */; };
@@ -69,13 +75,7 @@
 		DCBB00062FA46FEF009B6F25 /* DirectionCallSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB00052FA46FEF009B6F25 /* DirectionCallSetupView.swift */; };
 		DCBB00082FA46FEF009B6F25 /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB00072FA46FEF009B6F25 /* HistoryPage.swift */; };
 		DCC8EA07304F2EB20036250C /* TrainingApp Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCC8EA06304F2EB20036250C /* TrainingApp Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A4B21C51228B910150ACD913 /* ReactionDrillModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7D019F2FA46FEF009B6F25 /* ReactionDrillModels.swift */; };
-		189A9770EE0B2C8070453624 /* DrillStimulus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDDFAC5173C17DE632181C /* DrillStimulus.swift */; };
-		83E3A6F599E451F3E82906E7 /* AdaptiveDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */; };
-		BD764D47E6A0BFA6916DB840 /* ReactionDrillEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */; };
-		6B6EB5656E176334964FC01E /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
-		D81214C00E6637962DEF5AE5 /* DrillResultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */; };
-		44F26CB17DCAA00398803799 /* PhoneSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */; };
+		F2C97649A4A505A130E98EAA /* FootworkPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +131,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillResultPayload.swift; sourceTree = "<group>"; };
+		410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAnimationView.swift; sourceTree = "<group>"; };
+		AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkAnimationView.swift; sourceTree = "<group>"; };
 		BADDDFAC5173C17DE632181C /* DrillStimulus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillStimulus.swift; sourceTree = "<group>"; };
+		C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPattern.swift; sourceTree = "<group>"; };
 		CE0F39D32B67FE6D97EF61A6 /* ReactionDrillEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDrillEngine.swift; sourceTree = "<group>"; };
 		DC1324C82CA19C8E0014185A /* Phesian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phesian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1324D72CA19C900014185A /* PhesianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhesianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,10 +147,6 @@
 		DC72B68E2B1F09EF008C7392 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DC72B6922B1FFE32008C7392 /* MobWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobWorkouts.swift; sourceTree = "<group>"; };
 		DC72B6942B21A99F008C7392 /* DrillWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillWorkouts.swift; sourceTree = "<group>"; };
-		F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderPattern.swift; sourceTree = "<group>"; };
-		410D239A0AD31AAE31F40B18 /* LadderAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAnimationView.swift; sourceTree = "<group>"; };
-		C3117F79E7B7C3AAE03D2C18 /* FootworkPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPattern.swift; sourceTree = "<group>"; };
-		AB6E8F72B3FCDC6116C0E5D3 /* FootworkAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkAnimationView.swift; sourceTree = "<group>"; };
 		DC7D019D2FA46FEF009B6F25 /* ColorCallSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCallSetupView.swift; sourceTree = "<group>"; };
 		DC7D019E2FA46FEF009B6F25 /* ReactionDrillActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDrillActiveView.swift; sourceTree = "<group>"; };
 		DC7D019F2FA46FEF009B6F25 /* ReactionDrillModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDrillModels.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		DCC8EA15304F2EB30036250C /* TrainingApp Watch App Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainingApp Watch App Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC8EA1F304F2EB30036250C /* TrainingApp Watch App Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TrainingApp Watch App Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AEED445BC2C83FADADA358 /* AdaptiveDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveDifficulty.swift; sourceTree = "<group>"; };
-		284763F212C5DDDE31F3E830 /* DrillResultPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillResultPayload.swift; sourceTree = "<group>"; };
+		F7FC8A0C3270DE3C1403E591 /* LadderPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderPattern.swift; sourceTree = "<group>"; };
 		F936DD8189B4B13858C82A78 /* PhoneSessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSessionCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1147,7 +1147,6 @@
 				DEVELOPMENT_TEAM = 8D9UUVQPXT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1178,7 +1177,6 @@
 				DEVELOPMENT_TEAM = 8D9UUVQPXT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
